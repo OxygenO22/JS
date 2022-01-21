@@ -217,3 +217,36 @@ function initCap(str) {
 };
 
 document.writeln(initCap(str)); // HelloWorld */
+
+//
+/* 12. Змеиный_регистр (snake_case)
+Напишите функцию initSnake(str), которая преобразует стиль написания составных слов строки из CamelCase в snake_case, при котором несколько слов разделяются символом подчеркивания (_), причём каждое слово пишется с маленькой буквы. */
+
+/* function initSnake(str) {
+   let arr = str.split('');
+   let newArr = [];
+   for (let i = 0; i < arr.length; i++) {
+      if (arr[i] == arr[i].toUpperCase() && i != 0) {
+         newArr.push('_' + arr[i].toLowerCase())
+      } else {
+         newArr.push(arr[i].toLowerCase());
+      }
+   }
+   return newArr.join('');
+};
+
+document.writeln(initSnake('HelloWorld')); // hello_world */
+
+//
+/* 13. Повторить строку n раз
+Напишите функцию repeatStr(str, n), которая вовращает строку повторяемую определённое количество раз. */
+
+/* function repeatStr(str, n) {
+   let newStr = '';
+   for (let i = 0; i < n; i++) {
+      newStr += str;
+   }
+   return newStr;
+};
+
+document.writeln(repeatStr('Hello! kh ghscdhg nnh', 3)); // Hello!Hello!Hello! */
