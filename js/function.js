@@ -40,7 +40,7 @@ check_Palindrome('aoa');  // Вход - это не палиндром.
 
 Ожидаемый результат: d, o, do, g, dg, og, dog.
  */
-function substrings(str) {
+/* function substrings(str) {
    var array1 = [];
    for (var x = 0, y = 1; x < str.length; x++, y++) {
       array1[x] = str.substring(x, y);
@@ -63,4 +63,63 @@ function substrings(str) {
    document.writeln(combi.join("\n"));
 }
 
-substrings("dog"); // d, o, do, g, dg, og, dog
+substrings("dog"); // d, o, do, g, dg, og, dog */
+
+//
+/* 4. Вернуть переданную строку с буквами в алфавитном порядке
+Напишите функцию alphabet_order(str), которая возвращает переданную строку с буквами в алфавитном порядке.
+Пример строки: 'alphabetical'
+Ожидаемый результат: 'aaabcehillpt'
+Предположим, что символы пунктуации и цифры не включены в переданную строку. */
+
+/* function alphabet_order(str) {
+   return str.toLowerCase().split('').sort().join('');
+}
+document.writeln(alphabet_order("alphabetical")); // "aaabcehillpt" */
+
+//
+/* 5. Найти самое длинное слово в строке
+Напишите функцию find_longest_word(str), которая принимает строку в качестве параметра и находит самое длинное слово в строке. */
+
+/* function find_longest_word(str) {
+
+   let arr = str.split(' ').sort();
+   let newArr = [];
+   for (let i = 0; i < arr.length; i++) {
+      newArr.push(arr[0]);
+      break;
+   }
+   return newArr.join();
+}
+
+document.writeln(find_longest_word('Web Development Tutorial')); // "Development" */
+
+//
+/* 6. Подсчитать количество гласных в строке
+Напишите функцию vowel_count(str), которая принимает строку в качестве параметра и подсчитывает количество гласных в строке. */
+
+/* function vowel_count(str) {
+
+   let arr = str.toLowerCase().split('');
+   let count = 0;
+   for (let item of arr) {
+      if (item == 'a' || item == 'e' || item == 'i' || item == 'o' || item == 'u' || item == 'y') {
+         count++;
+      }
+   }
+   return count;
+}
+document.writeln(vowel_count('Web Development Tutorial')); //9 */
+
+//or
+/* function vowel_count(str1) {
+   var vowel_list = 'aeiouyAEIOUY';
+   var vcount = 0;
+   for(var x = 0; x < str1.length ; x++) {
+     if (vowel_list.indexOf(str1[x]) !== -1) {
+       vcount += 1;
+     }
+   }
+   return vcount;
+ }
+ document.writeln(vowel_count('Web Development Tutorial')); //9 */
