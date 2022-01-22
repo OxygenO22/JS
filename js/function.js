@@ -4,11 +4,63 @@
 /* 1. Переверните число задом наперед
 Напишите функцию JavaScript, которая переворачивает число. */
 
-
-function reverse_a_number(n) {
-
+/* function reverse_a_number(n) {
    return n.toString().split('').reverse().join('');
-
 };
+document.writeln(reverse_a_number(258961)); // 169852 */
 
-document.writeln(reverse_a_number(258961)); // 169852
+//
+/* 2. Проверьте, является ли переданная строка палиндромом или нет
+Напишите функцию JavaScript, которая проверяет, является ли переданная строка палиндромом? Палиндром - это слово, фраза или последовательность, которые читаются так же, как вперед, назад, например, level. */
+
+/* function check_Palindrome(str_entry) {
+   let str_entryRew = str_entry.split('').reverse().join('');
+   if (str_entry.toLowerCase() === str_entryRew.toLowerCase() && str_entry != '') {
+      document.writeln(`${str_entry} - палиндром ${'<br>'}`);
+   } else {
+      document.writeln(`${str_entry} - не палиндром ${'<br>'}`);
+   }
+}
+check_Palindrome('level'); // Запись - палиндром.
+check_Palindrome('topot'); // Запись - палиндром.
+check_Palindrome('that');  // Вход - это не палиндром.
+check_Palindrome('');  // Вход - это не палиндром.
+check_Palindrome('a');  // Вход - это не палиндром.
+check_Palindrome('aa');  // Вход - это не палиндром.
+check_Palindrome('aao');  // Вход - это не палиндром.
+check_Palindrome('aoao');  // Вход - это не палиндром.
+check_Palindrome('aoa');  // Вход - это не палиндром.
+ */
+
+//
+/* 3. Функция, которая генерирует все комбинации строки
+Напишите функцию substrings(str), которая генерирует все комбинации строки.
+
+Пример строки: 'dog'.
+
+Ожидаемый результат: d, o, do, g, dg, og, dog.
+ */
+function substrings(str) {
+   var array1 = [];
+   for (var x = 0, y = 1; x < str.length; x++, y++) {
+      array1[x] = str.substring(x, y);
+   }
+   var combi = [];
+   var temp = "";
+   var slent = Math.pow(2, array1.length);
+
+   for (var i = 0; i < slent; i++) {
+      temp = "";
+      for (var j = 0; j < array1.length; j++) {
+         if ((i & Math.pow(2, j))) {
+            temp += array1[j];
+         }
+      }
+      if (temp !== "") {
+         combi.push(temp);
+      }
+   }
+   document.writeln(combi.join("\n"));
+}
+
+substrings("dog"); // d, o, do, g, dg, og, dog
