@@ -250,3 +250,50 @@ document.writeln(initSnake('HelloWorld')); // hello_world */
 };
 
 document.writeln(repeatStr('Hello! kh ghscdhg nnh', 3)); // Hello!Hello!Hello! */
+
+//
+/* 14. Получить имя файла
+Напишите функцию path(pathname), которая вовращает имя файла (подстрока после последнего символа "\" ) из полного пути к файлу. */
+
+/* var pathname = "/home/user/dir/file.txt";
+
+function path(pathname) {
+   let arr = pathname.split('/').pop();
+   return arr;
+   //or
+   //return  arr[arr.length - 1];
+};
+
+document.writeln(path(pathname)); // file.txt */
+
+//
+/* 15. Заканчивается ли строка символами другой строки
+Создайте метод объекта String endsWith(), который сравнивает подстроку str1 с окончанием исходной строки str и определяет заканчивается ли строка символами подстроки. */
+
+/* var str = "Каждый охотник желает знать";
+var str1 = "скрипт";
+var str2 = "знать";
+
+String.prototype.endsWith = function (substring) {
+   return this.includes(substring);
+};
+
+document.writeln(str.endsWith(str1)); // false
+document.writeln(str.endsWith(str2)); // true */
+
+//
+/* 16. Подстрока до/после указанного символа
+Напишите функцию getSubstr(str, char, pos), которая возвращает часть строки, расположенную после или до указанного символа char в зависимости от параметра pos. */
+
+var str = 'Астрономия — Наука о небесных телах';
+
+function getSubstr(str, char, pos) {
+   if (pos == 'after') {
+      return str.substring(str[char])
+   }
+   console.log(str[char])
+   console.log(char)
+};
+
+document.writeln(getSubstr(str, '—', 'after')); // Наука о небесных телах
+document.writeln(getSubstr(str, 'Н', 'before')); // Астрономия —
