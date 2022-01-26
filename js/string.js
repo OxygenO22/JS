@@ -285,15 +285,11 @@ document.writeln(str.endsWith(str2)); // true */
 /* 16. Подстрока до/после указанного символа
 Напишите функцию getSubstr(str, char, pos), которая возвращает часть строки, расположенную после или до указанного символа char в зависимости от параметра pos. */
 
-var str = 'Астрономия — Наука о небесных телах';
+/* var str = 'Астрономия — Наука о небесных телах';
 
 function getSubstr(str, char, pos) {
-   if (pos == 'after') {
-      return str.substring(str[char])
-   }
-   console.log(str[char])
-   console.log(char)
+   
 };
 
 document.writeln(getSubstr(str, '—', 'after')); // Наука о небесных телах
-document.writeln(getSubstr(str, 'Н', 'before')); // Астрономия —
+document.writeln(getSubstr(str, 'Н', 'before')); // Астрономия — */
