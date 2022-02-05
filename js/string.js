@@ -288,8 +288,27 @@ document.writeln(str.endsWith(str2)); // true */
 /* var str = 'Астрономия — Наука о небесных телах';
 
 function getSubstr(str, char, pos) {
-   
+
 };
 
 document.writeln(getSubstr(str, '—', 'after')); // Наука о небесных телах
 document.writeln(getSubstr(str, 'Н', 'before')); // Астрономия — */
+
+//
+/* 17. Вставить подстроку в указанную позицию строки
+Напишите функцию insert(str, substr, pos), которая вставляет подстроку substr в указханную позицию pos строки str. По умолчанию подстрока вставляется в начало строки.
+ */
+/* function insert(str, substr, pos) {
+   let arr = str.split(' ');
+   console.log(arr.splice(pos, 0, substr));
+   return str.split(' ').splice(pos, 0, substr).join('');
+
+
+}; */
+
+//document.writeln(insert('Казнить нельзя')); // Казнить нельзя
+//document.writeln(insert('Казнить нельзя', 'Помиловать ')); // Помиловать Казнить нельзя
+//document.writeln(insert('Казнить нельзя', 'Помиловать ', 1)); // Казнить Помиловать нельзя
+
+
+

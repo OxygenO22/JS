@@ -49,8 +49,7 @@ document.write(getDaysInMonth(9, 2021));
 Вывод:
 30 */
 
-function getDaysInMonth(mm, yyyy) {
+/* function getDaysInMonth(mm, yyyy) {
    let date = new Date();
 
-}
-console.log('Hello')
+} */

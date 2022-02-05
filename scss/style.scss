@@ -1,21 +1,4 @@
-body {
-   text-indent: 20px;
-   text-transform: capitalize;
-   text-decoration: line-through;
-   //word-wrap: break-word;
-   word-break: break-all;
-   background-image: url("");
-   background-repeat: repeat-x;
-   background-position: right top;
-}
-p {
-   box-sizing: border-box;
-   width: 100px;
-   border: 5px #000;
-   border-style: dashed;
-   margin: 10px;
-   padding: 5px;
-   margin: 5px;
-   outline: 2px red;
-   outline-style: double;
+/*  */
+html * p {
+   color: red;
 }
