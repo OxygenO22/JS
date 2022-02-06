@@ -111,3 +111,31 @@ promise.then((result) => {
    console.log('ERROR');
 }); */
 
+//#4
+let divMainPromise = document.getElementById('main_2');
+let buttonForImg = document.getElementById('load_image');
+let imgArr = ['img/fon4.jpg', '\'img/instruction.jpg\'', 'img/intro2.jpg', 'img/tree2little.png',];
+
+function loadImage(path) {
+   return new Promise((resolve, reject) => {
+      let image = document.createElement('img');
+      image.src = path;
+
+      image.addEventListener('load', () => {
+         resolve(image);
+      });
+      image.addEventListener('error', () => {
+         reject(new Error('Not found this image: "' + path + '", load error'))
+      });
+   });
+}
+
+buttonForImg.addEventListener('click', () => {
+   for (let item of imgArr) {
+      loadImage(item).then((image) => {
+         divMainPromise.append(image);
+      }).catch((error) => {
+         console.log(error);
+      });
+   }
+});
