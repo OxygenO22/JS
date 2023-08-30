@@ -6,13 +6,9 @@
 
 /* var str = 'Каждый охотник желает знать';
 function stringToarray(str) {
-
    return str.split(' ');
-
 };
-
 var arr = stringToarray(str);
-
 document.writeln(arr);
 console.log(arr) */
 
@@ -21,27 +17,15 @@ console.log(arr) */
 Напишите функцию delete_characters(str, length), которая возвращает подстроку, состоящую из указанного количества символов. */
 
 /* var str = 'Каждый охотник желает знать';
-function delete_characters(str, length) {
-
-   return str.slice(0, length);
-
-};
-
-document.writeln(delete_characters(str, 7));
- */
+let delete_characters = (str, length) => str.slice(0, length);
+console.log(delete_characters(str, 7)); */
 
 //
 /* 3. Вставить тире между словами строки
 Напишите функцию insert_dash(str), которая принимает строку str в качестве аргумента и вставляет тире (-) между словами. При этом все символы строки необходимо перевести в верхний регистр. */
 
-/* var str = "HTML JavaScript PHP";
-
-function insert_dash(str) {
-
-   return str.split(' ').join('-').toUpperCase();
-
-}
-
+/* let str = "HTML JavaScript PHP";
+let insert_dash = (str) => str.split(' ').join('-').toUpperCase();
 document.writeln(insert_dash(str)); // 'HTML-JAVASCRIPT-PHP'
 console.log(insert_dash(str)) */
 
@@ -49,12 +33,11 @@ console.log(insert_dash(str)) */
 /* 4. Сделать первую букву строки прописной
 Напишите функцию, которая принимает строку в качестве аргумента и преобразует регистр первого символа строки из нижнего регистра в верхний. */
 
-/* var str = "string not starting with capital";
+/* let str = "string not starting with capital";
 
-function cursive_letter(str) {
-
-   return str.charAt(0).toUpperCase() + str.slice(1);
-}
+let cursive_letter = (str) =>
+   // return str.charAt(0).toUpperCase() + str.slice(1);
+   return str[0].toUpperCase() + str.slice(1);
 
 document.writeln(cursive_letter(str)); // "String not starting with capital"
 console.log(cursive_letter(str)) */
@@ -63,17 +46,22 @@ console.log(cursive_letter(str)) */
 /* 5. Первая буква каждого слова заглавная
 Напишите функцию capitalize(str), которая возвращает строку, в которой каждое слово начинается с заглавной буквы. */
 
-/* var str = "каждый охотник желает знать";
+/* let str = "каждый охотник желает знать";
 
-function capitalize(str) {
-   let arr = str.split(' ');
-   let arrs;
-   let newArr = [];
-   for (items of arr) {
-      arrs = items.charAt(0).toUpperCase() + items.slice(1);
-      newArr.push(arrs);
-   }
-   return newArr.join(' ');
+let capitalize = (str) => {
+   //let arr = str.split(' ');
+   //let arrs;
+   //let newArr = [];
+   //for (items of arr) {
+   //arrs = items.charAt(0).toUpperCase() + items.slice(1);
+   //arrs = items[0].toUpperCase() + items.slice(1);
+   //newArr.push(arrs);
+   //}
+   //return newArr.join(' ');
+   //or
+   let result = str.split(' ').map(items => items[0].toUpperCase() + items.slice(1));
+   return result.join(' ');
+   
 }
 
 document.writeln(capitalize(str)); // "Каждый Охотник Желает Знать"
@@ -81,22 +69,25 @@ console.log(capitalize(str)) */
 
 //
 /* 6. Смена регистра символов строки
-Напишите функцию change_register(str), которая принимает в качестве аргумента строку и и заменяет регистр каждого символа на противоположный. Например, если вводится «КаЖдЫй ОхОтНиК», то на выходе должно быть «кАжДыЙ оХоТнИк». */
+Напишите функцию change_register(str), которая принимает в качестве аргумента строку и заменяет регистр каждого символа на противоположный. Например, если вводится «КаЖдЫй ОхОтНиК», то на выходе должно быть «кАжДыЙ оХоТнИк». */
 
 /* var str = "КаЖдЫй ОхОтНиК жЕлАеТ зНаТь";
 
 function change_register(str) {
 
-   let arr = str.split('');
-   let newArr = [];
-   for (items of arr) {
-      if (items.codePointAt(0) == items.toUpperCase().codePointAt(0)) {
-         newArr.push(items.toLowerCase());
-      } else {
-         newArr.push(items.toUpperCase());
-      }
-   }
-   return newArr.join('');
+   //let arr = str.split('');
+   //let newArr = [];
+   //for (items of arr) {
+   //   if (items == items.toUpperCase()) {
+   //      newArr.push(items.toLowerCase());
+   //   } else {
+   //      newArr.push(items.toUpperCase());
+   //   }
+   //}
+   //return newArr.join('');
+   //or
+   let result = str.split("").map(items => items === items.toUpperCase() ? items.toLowerCase() : items.toUpperCase());
+   return result.join("");
 }
 
 document.writeln(change_register(str)); // "кАжДыЙ оХоТнИк ЖеЛаЕт ЗнАтЬ"
@@ -135,11 +126,8 @@ function remove_char(str) {
    for (item of arr) {
       if (item.codePointAt() >= 65 && item.codePointAt() <= 90 || item.codePointAt() >= 97 && item.codePointAt() <= 122 || item.codePointAt() >= 48 && item.codePointAt() <= 57 || item.codePointAt() == 32) {
          sortItemArr.push(item);
-      } else {
-         sortItemArr.push(' ');
       }
    }
-
    let str2 = sortItemArr.join('');
    let arr2 = str2.split(' ');
    for (sortItem of arr2) {
@@ -210,8 +198,9 @@ document.writeln(insensitive_search('Изучаю JavaScript', 'javascriptS'));
 function initCap(str) {
    let arr = str.toLowerCase().split(' ');
    let newArr = [];
-   for (let items of str) {
-      newArr.push(items.charAt(0).toUpperCase() + items.slice(1));
+   for (let items of arr) {
+      //newArr.push(items.charAt(0).toUpperCase() + items.slice(1));
+      newArr.push(items[0].toUpperCase() + items.slice(1));
    }
    return newArr.join('');
 };
@@ -255,9 +244,9 @@ document.writeln(repeatStr('Hello! kh ghscdhg nnh', 3)); // Hello!Hello!Hello! *
 /* 14. Получить имя файла
 Напишите функцию path(pathname), которая вовращает имя файла (подстрока после последнего символа "\" ) из полного пути к файлу. */
 
-/* var pathname = "/home/user/dir/file.txt";
+//var pathname = "/home/user/dir/file.txt";
 
-function path(pathname) {
+/* function path(pathname) {
    let arr = pathname.split('/').pop();
    return arr;
    //or
@@ -310,5 +299,187 @@ document.writeln(getSubstr(str, 'Н', 'before')); // Астрономия — */
 //document.writeln(insert('Казнить нельзя', 'Помиловать ')); // Помиловать Казнить нельзя
 //document.writeln(insert('Казнить нельзя', 'Помиловать ', 1)); // Казнить Помиловать нельзя
 
+//
+//----------------------------------- polindrom
+/* //function polindrom(str) {
+//   return (str.split("").join("") === str.split("").reverse().join("")) ? "Polindrom" : "This is not polindrom";
+//}
+//or
+const polindrom = (str) => (str.split("").join("") === str.split("").reverse().join("")) ? "Polindrom" : "This is not polindrom";
+console.log(polindrom("тест"));
+console.log(polindrom("шалаш")); */
 
+//
+//----------------------------------- shortest subString
+/* //function findShort(str) {
+//   return str.split(" ").sort((a, b) => a.length - b.length)[0];
+//}
+//or
+const findShort = (str) => str.split(" ").sort((a, b) => a.length - b.length)[0];
+console.log(findShort("strong, first, description, best")); */
 
+//
+//----------------------------------- ФИО
+/* //function personsFIO(str) {
+//let arr = str.split(" ");
+//let newArr = [];
+//for (let item of arr) {
+//   newArr.push(item[0].toUpperCase() + '.')
+//}
+//return newArr.join("");
+//or
+//return str.split(" ").map(item => `${item[0].toUpperCase() + "."}`).join("");
+
+//}
+//or
+const personsFIO = (str) => str.split(" ").map(item => `${item[0].toUpperCase() + "."}`).join("");
+console.log(personsFIO("elon mask")); */
+
+//
+//----------------------------------- min/max value
+/* //function valueMinMax(arr) {
+//   return [Math.min(...arr), Math.max(...arr)];
+//}
+//or
+const valueMinMax = (arr) => [Math.min(...arr), Math.max(...arr)];
+console.log(valueMinMax([2, 5, 8, 1, 100, 0, 4])); */
+
+//
+//----------------------------------- Big first letter in the every word
+/* const bigFirstLetter = (str) => str.split(" ").map(item => `${item[0].toUpperCase() + item.slice(1)}`).join(" ");
+console.log(bigFirstLetter("Lorem ips doy ho kbdk")); */
+
+//
+//----------------------------------- "abc" to "A-Bb-Ccc"
+/* const accum = (str) => str.toUpperCase().split("").map((el, i) => `${el + el.repeat(i).toLowerCase()}`).join("-");
+console.log(accum("cadklsl")) */
+
+//
+//----------------------------------- 1-n, number/3 = foo, number/5 = bar, number/3/5 = foobar
+/* const changeNum = (n) => {
+   let arr = [];
+   for (let i = 1; i <= n; i++) {
+      if (i % 3 === 0 && i % 5 === 0) {
+         arr.push("foobar");
+      }
+      else if (i % 3 === 0) {
+         arr.push("foo");
+      }
+      else if (i % 5 === 0) {
+         arr.push("bar");
+      }
+      else {
+         arr.push(i);
+      }
+   }
+   return arr.join(", ");
+}
+console.log(changeNum(15)); */
+
+//
+//----------------------------------- some array to one array
+/* const oneArray = (...arr) => {
+   let array = [...arr];
+
+   let newArr = [];
+   for (let i = 0; i < array.length; i++) {
+      newArr.push(...arr[i]);
+   }
+   newArr = new Set(newArr);
+   return [...newArr]
+
+}
+console.log(oneArray([1, 2, 3], [4, 1, 5], [6, 7, 8, 5])); */
+
+/* function unique(arr) {
+   //let uniqueValue = new Set(arr);
+   //return [...uniqueValue];
+   //or
+   return Array.from(new Set(arr));
+}
+
+let values = ["Hare", "Krishna", "Hare", "Krishna",
+   "Krishna", "Krishna", "Hare", "Hare", ":-O"
+];
+
+console.log(unique(values)); // Hare,Krishna,:-O */
+
+//
+//----------------------------------- return phone number
+/* const showPhoneNumber = (num) => {
+   //let arr = num.toString().split("");
+   //arr.splice(0, 0, "(");
+   //arr.splice(4, 0, ")");
+   //arr.splice(5, 0, " ");
+   //arr.splice(9, 0, "-");
+   //return arr.join("");
+   //or
+   let strNum = num.toString();
+   return `(${strNum.slice(0, 3)}) ${strNum.slice(3, 6)}-${strNum.slice(6, 9)}`
+}
+console.log(showPhoneNumber(123456789)); */
+
+//
+//
+/* let a = [1, 2];
+let b = [3, 4];
+let arr = [];
+arr.push(...a);
+arr.pop();
+arr.push(...b);
+arr.pop();
+let sum = arr.reduce((a, b) => a + b)
+console.log(typeof (42.1)) */
+
+//
+//----------------------------------- Make as: * 'abc' =>  ['ab', 'c_'], * 'abcdef' => ['ab', 'cd', 'ef']
+/* const strTo2symb = (str) => {
+   let arr = str.split("");
+   let newArr = [];
+   for (let i = 0; i < arr.length; i++) {
+      if (arr[i] % 2 == 0) {
+         newArr.push("_");
+      } else (
+         newArr.push(arr[i])
+      )
+   }
+   return newArr;
+}
+console.log(strTo2symb("abcd")); */
+
+//
+//-----------------------------------
+/* const sort = str => str.split(" ").sort((a, b) => a.length - b.length)[0];
+console.log(sort("hi mother people not bad socker player")) */
+
+//
+//-----------------------------------
+/* const name = str => str.split(" ").map(item => item[0]).join(".").toUpperCase() + ".";
+console.log(name("bill gates"));  */
+
+//
+//-----------------------------------
+/* const minMax = (arr) => [Math.min(...arr), Math.max(...arr)];
+console.log(minMax([1, 5, 7, 2, 10, 503, 0])); */
+
+//
+//-----------------------------------
+/* let menu = {
+  width: 200,
+  height: 300,
+  title: "My menu"
+};
+
+let multiplyNumeric = (menu) => {
+   for (let key in menu) {
+      if (typeof menu[key] == 'number') {
+         menu[key] *= 2; 
+      }
+   }
+   console.log(menu);
+   
+}
+
+multiplyNumeric(menu);
+
+console.log(typeof 2) */

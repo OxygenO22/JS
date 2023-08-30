@@ -5,9 +5,10 @@
 Напишите функцию JavaScript, которая переворачивает число. */
 
 /* function reverse_a_number(n) {
-   return n.toString().split('').reverse().join('');
+   return +n.toString().split('').reverse().join('');
 };
-document.writeln(reverse_a_number(258961)); // 169852 */
+document.writeln(reverse_a_number(258961)); // 169852
+console.log(reverse_a_number(258961)); // 169852 */
 
 //
 /* 2. Проверьте, является ли переданная строка палиндромом или нет
@@ -123,3 +124,62 @@ document.writeln(vowel_count('Web Development Tutorial')); //9 */
    return vcount;
  }
  document.writeln(vowel_count('Web Development Tutorial')); //9 */
+
+
+//
+/* function filter_list(l) {
+   let array = [];
+   return l.map(num => {
+      if ((typeof num) != 'string') {
+         array.push(num);
+      }
+   })
+}
+
+console.log(filter_list([1, 2, 'a', 'b'])); //[1,2] */
+
+//
+//function-constructor
+/* function Person(first, last, age, eye) {
+   this.firstName = first;
+   this.lastName = last;
+   this.age = age;
+   this.eyeColor = eye;
+
+   this.getFullName = function () {
+      return this.firstName + " " + this.lastName;
+   };
+
+   this.getBirthYear = function () {
+      const currentDate = new Date;
+      return currentDate.getFullYear() - this.age;
+   };
+
+   this.greet = function () {
+      const greeting = `Hello, my name is ${this.getFullName()}, I was born in ${this.getBirthYear()}`;
+      console.log(greeting);
+   }
+}
+
+const myFather = new Person("John", "Doe", 50, "blue");
+const myMother = new Person("Sally", "Ray", 48, "green");
+
+myFather.greet();
+myMother.greet();
+
+console.log(myFather);
+console.log(myMother); */
+
+//
+//destructuring
+/* let [a, b] = [10, 20];
+console.log(a, b);
+
+let [c, d, ...rest] = [1, 2, 3, 4, 5];
+console.log(c, d, rest);
+
+let { e, f } = { e: 10, f: 20 };
+console.log(e, f);
+
+let { g, h, ...ost } = { g: 1, h: 2, j: 3, k: 4, l: 5 };
+console.log(g, h, ost); */

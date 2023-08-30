@@ -112,7 +112,7 @@ promise.then((result) => {
 }); */
 
 //#4
-let divMainPromise = document.getElementById('main_2');
+/* let divMainPromise = document.getElementById('main_2');
 let buttonForImg = document.getElementById('load_image');
 let imgArr = ['img/fon4.jpg', '\'img/instruction.jpg\'', 'img/intro2.jpg', 'img/tree2little.png',];
 
@@ -138,4 +138,4 @@ buttonForImg.addEventListener('click', () => {
          console.log(error);
       });
    }
-});
+}); */
