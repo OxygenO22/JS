@@ -12,7 +12,7 @@ createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) // => returns "(123) 456-7890"
 
 // Example: The binary representation of 1234 is 10011010010, so the function should return 5 in this case
 
-const countBites = (integer) => {
+/* const countBites = (integer) => {
 	if (integer > 0) {
 		let res = '';
     let bin = 1;
@@ -27,4 +27,4 @@ const countBites = (integer) => {
 }
 
 
-console.log(countBites(1234));
+console.log(countBites(1234)); */
