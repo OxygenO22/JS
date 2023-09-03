@@ -3,8 +3,7 @@ function calculator(string) {
   const digits = { 'I': 1, 'II': 2, 'III': 3, 'IV': 4, 'V': 5, 'VI': 6, 'VII': 7, 'VIII': 8, 'IX': 9, 'X': 10, };
 
   let arr = string.split(' ');
-  let a;
-  let b;
+  let a, b;
   let symb = arr[1];
 
   if (arr.length === 1) {
@@ -37,21 +36,13 @@ function calculator(string) {
     }
     return arrRome;
   };
-  
-  const defineIsRomeDigits = () => {
-    if (findRomeDigits().length === 2){
-      return true;
-    } else {
-      return false;
-    }
-  };
+
+  const defineIsRomeDigits = () => findRomeDigits().length === 2 ? true : false;
   
   if (defineIsRomeDigits()) {
-    findRomeDigits();
     a = findRomeDigits()[0];
     b = findRomeDigits()[1];
   } else {
-    findRomeDigits();
     if (findRomeDigits().length === 1) {
       throw Error('Используются одновременно разные системы счисления!');
     } else {
@@ -91,7 +82,7 @@ function calculator(string) {
 
   const makeAnswerInRome = (arabian) => {
     let arabianArray = [1,4,5,9,10,40,50,90,100,400,500,900,1000];
-    let romanArray = ["I","IV","V","IX","X","XL","L","XC","C","CD","D","CM","M"];
+    let romanArray = ['I','IV','V','IX','X','XL','L','XC','C','CD','D','CM','M'];
       
     if (!arabian) return "";
     let rezult = "";
