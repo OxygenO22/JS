@@ -1,17 +1,6 @@
 function calculator(string) {
 
-  const digits = {
-    'I': 1,
-    'II': 2,
-    'III': 3,
-    'IV': 4,
-    'V': 5,
-    'VI': 6,
-    'VII': 7,
-    'VIII': 8,
-    'IX': 9,
-    'X': 10,
-  };
+  const digits = { 'I': 1, 'II': 2, 'III': 3, 'IV': 4, 'V': 5, 'VI': 6, 'VII': 7, 'VIII': 8, 'IX': 9, 'X': 10, };
 
   let arr = string.split(' ');
   let a;
@@ -30,18 +19,18 @@ function calculator(string) {
     for (let key in digits) {
       if (arr[0] === arr[2]) {
         switch (key) {
-        case arr[0]:
+        case arr[0].toUpperCase():
           arrIsRome.push(digits[key]);
-        case arr[2]:
+        case arr[2].toUpperCase():
           arrIsRome.push(digits[key]);
           break;
         }
       } else {
         switch (key) {
-        case arr[0]:
+        case arr[0].toUpperCase():
           arrIsRome.push(digits[key]);
           break;
-        case arr[2]:
+        case arr[2].toUpperCase():
           arrIsRome.push(digits[key]);
           break;
         }
@@ -58,18 +47,18 @@ function calculator(string) {
     for (let key in digits) {
       if (arr[0] === arr[2]) {
         switch (key) {
-        case arr[0]:
+        case arr[0].toUpperCase():
           arrRome.push(digits[key]);
-        case arr[2]:
+        case arr[2].toUpperCase():
           arrRome.push(digits[key]);
           break;
         }
       } else {
         switch (key) {
-        case arr[0]:
+        case arr[0].toUpperCase():
           arrRome[0] = (digits[key]);
           break;
-        case arr[2]:
+        case arr[2].toUpperCase():
           arrRome[1] = (digits[key]);
           break;
         }
@@ -121,22 +110,29 @@ function calculator(string) {
     }
   };
 
-  const makeAnswerInRome = (answer) => {
-    if (answer <= 0) {
-      return '';
+  const makeAnswerInRome = (arabian) => {
+    let arabianArray = [1,4,5,9,10,40,50,90,100,400,500,900,1000];
+    let romanArray = ["I","IV","V","IX","X","XL","L","XC","C","CD","D","CM","M"];
+      
+    if (!arabian) return "";
+    let rezult = "";
+    let i = arabianArray.length - 1;
+    while (arabian > 0) {
+        if (arabian >= arabianArray[i]) {
+            rezult += romanArray[i];
+            arabian -= arabianArray[i];
+        }
+        else i--;
     }
-    let result = '';
-    for (let key in digits) {
-      while (answer >= digits[key]) {
-        result +=key;
-        answer -=digits[key]
-      }
-    }
-    return result;
+    return rezult;
   }
 
   if (a !== 0 && a <= 10 &&  b !== 0 && b <= 10) {
-    return console.log(makeCalculate(a, b, defineIsRomeDigits()));
+    if (defineIsRomeDigits()) {
+      return console.log(makeAnswerInRome(makeCalculate(a, b, defineIsRomeDigits())));
+    } else {
+      return console.log(makeCalculate(a, b, defineIsRomeDigits()));
+    }
   } else {
     throw Error('Допустимые значения от 1 до 10!');
   };
@@ -145,5 +141,5 @@ function calculator(string) {
 
 }
 
-//calculator('I - X');
-calculator('X - I');
+calculator('I - X');
+//calculator('X - I');
