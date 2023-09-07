@@ -1,4 +1,4 @@
-function calculator(string) {
+/* function calculator(string) {
 
   const digits = { 'I': 1, 'II': 2, 'III': 3, 'IV': 4, 'V': 5, 'VI': 6, 'VII': 7, 'VIII': 8, 'IX': 9, 'X': 10, };
 
@@ -110,4 +110,4 @@ function calculator(string) {
 }
 
 //calculator('I - X');
-calculator('5 - 1');
+calculator('5 - 1'); */
