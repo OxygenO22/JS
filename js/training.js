@@ -3,13 +3,15 @@
 //Clone array
 /* let vegetables = ['Капуста', 'Репа', 'Редиска', 'Морковка'];
 let arr1;
+let arrClone = [...vegetables];
 let getArray = (arr) => {
     //1 return arr1 = arr.slice();
     //2 return arr1 = arr.join(", ");
 }
 // 1 console.log(Array.isArray(arr1))
-getArray(vegetables);
-console.log(typeof arr1) */
+//getArray(vegetables);
+//console.log(typeof arr1)
+console.log(arrClone) */
 
 // :
 /* const num = prompt('Введите число', 525);
@@ -20,7 +22,7 @@ let colonOdd = (num) => {
     for (let i = 1; i < arr.length; i++) {
        if ((arr[i - 1] % 2 !== 0) && (arr[i] % 2 !== 0)) {
         arr1.push(':' + arr[i]);
-       } else {
+       } else {333
         arr1.push(arr[i]);
        }
     }
@@ -42,6 +44,25 @@ let colonOdd = (num) => {
     }
     return arr1.join(" ");
  }  */
+
+ const stroca = 'КаЖдЫй ОхОтНиК';
+
+ let changeString = (string) => {
+    let newArr = [];
+    let arr = stroca.split('');
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === arr[i].toUpperCase()) {
+            newArr.push(arr[i].toLowerCase())
+        } else {
+            newArr.push(arr[i].toUpperCase())
+        }
+    }
+    return console.log(newArr.join(''))
+ }
+
+ changeString(stroca);
+
+ 
 
  // del duplicates
 /* var arr = ["php", "Php", "css", "css", "script", "script", "html", "html", "java"];
@@ -256,7 +277,7 @@ getArr(a, b, c); // [9 8 7 6 5 4 3 2 1] */
 
 // 1 // факториал
 /* let factorFunc = (num) => (num > 1) ? num *= factorFunc(num - 1) : num;
-console.log(factorFunc(1)); */
+console.log(factorFunc(5)); */
 
 // 2 // НОД
 /* let getNOD = (a, b) => {

@@ -111,7 +111,7 @@ console.log(clone) */
 
 // 2.6 nested object clone
 
-let user = {
+/* let user = {
   name: "John",
   sizes: {
     height: 182,
@@ -123,7 +123,7 @@ let clone = structuredClone(user);
 
 console.log(clone)
 
-console.log(user.sizes == clone.sizes);
+console.log(user.sizes == clone.sizes); */
 
 
 // 2.7 object union
