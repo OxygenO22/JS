@@ -45,24 +45,6 @@ let colonOdd = (num) => {
     return arr1.join(" ");
  }  */
 
- const stroca = 'КаЖдЫй ОхОтНиК';
-
- let changeString = (string) => {
-    let newArr = [];
-    let arr = stroca.split('');
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] === arr[i].toUpperCase()) {
-            newArr.push(arr[i].toLowerCase())
-        } else {
-            newArr.push(arr[i].toUpperCase())
-        }
-    }
-    return console.log(newArr.join(''))
- }
-
- changeString(stroca);
-
- 
 
  // del duplicates
 /* var arr = ["php", "Php", "css", "css", "script", "script", "html", "html", "java"];
@@ -80,17 +62,22 @@ delDupl(arr); */
 
 // shuffle array
 /* let array = [0,1,2,3,4,5,6,7,8,9];
-let shuffleArray = (array) => {
-   return console.log(array.sort( (a, b) => a - (Math.random()*10)*b));
-}
-shuffleArray(array); */
+let shuffArr = [0, 9, 7, 6, 5, 4, 8, 3, 2, 1];
+let shuffleArray = (array) => console.log(array.sort( (a, b) => a - (Math.random()*10)*b));
+let sortArray = (array) => console.log(array.sort( (a, b) => a - b));
+shuffleArray(array);
+sortArray(shuffArr); */
 
 // get First elem
 /* let array = [0,1,2,3,4,5,6,7,8,9];
 let getFirst = (array, n) => {
    if (array == null) return false;
    if (n == null) return array.at(0);
+   if (n >= 0) {
     return console.log(array.slice(0, n));
+   } else {
+    return console.log(array.slice(n));
+   }
 }
 getFirst(array, 4);
 getFirst(array, 2);
@@ -98,8 +85,8 @@ getFirst(array, 7);
 getFirst(array, -5); */
 
 //summ arr
-/* let arr1 = [1, 2, 3, 4, 5];
-let arr2 = [4, 5, 6];
+/* let arr2 = [1, 2, 3, 4, 5];
+let arr1 = [4, 5, 6];
 let arr3 = [];
 let getSumm = (arr1, arr2) => {
 let count;
@@ -139,6 +126,7 @@ let countIdentic = (arr) => {
         }
     }
 
+    console.log(res);
     console.log(`[${resFin}], length = ${resFin.length}`);
 }
 countIdentic(arr); */
@@ -147,7 +135,7 @@ countIdentic(arr); */
 /* let arr = [1, [2], [3, [[4]]],[5,6]];
 let expand = (arr) => {
     //return console.log(arr.toString().split(','));
-    return console.log(arr.flat(Infinity));
+    //return console.log(arr.flat(Infinity));
 }
 expand(arr); */
 
@@ -173,29 +161,21 @@ console.log(arrayDiff(arr1, arr2)); */
 // 15 // sort array from - to +
 /* let numbers = [3, 8, 7, 6, 5, -4, 3, 2, 1];  
 let compareNumbers = (arr) => {
-    return console.log(arr.sort((a, b) => a - b));
+    return console.log((arr.sort((a, b) => a - b)));
 }
 compareNumbers(numbers); */
 
 // 16 // count copy item
 /* var arr=[7, 'z', 'z', 'z', 3, 7, 'z', 7, 'z', 3, 5, 9, 7];  
 let count = 0;
-let max = 1;
-let item;
+let item = 7;
 let countCopy = (arr) => {
     for (let i = 0; i < arr.length; i++) {
-        for (let j = i; j < arr.length; j++) {
-            if(arr[i] === arr[j]) {
-                count++;
-            }
-            if (max < count) {
-                max = count;
-                item = arr[i];
-            }
+        if (arr[i] === item) {
+            count++
         }
-        count = 0;
     }
-    console.log(`${item} repeat ${max} times`);
+    console.log(`${item} repeat ${count} times`);
 }
 countCopy(arr); */
 
@@ -253,6 +233,14 @@ findCouple(array, number); */
    { author: 'Райчел Мид', title: 'Золотая лилия'}
    ];
 
+   // 22.1
+   let arr = [];
+   const findValues = litmir.map(item => {
+     arr.push(item.author);
+   })
+   console.log(arr)
+
+   // 22.2
 const propertyValue = (array, key) => array.reduce((acc, curr) => acc.concat(curr[key]), [])
 
 console.log(propertyValue(litmir, 'title'));  // Улетела сказка,Восстание Аркан,Золотая лилия
@@ -293,7 +281,7 @@ console.log(getNOD(15, 25)); */
 //----------------------------- Дата -----------------------------//
 
 // 1 // is object date
-/* var is_date = function(input) {
+/* let is_date = function(input) {
   if ( Object.prototype.toString.call(input) === "[object Date]" )
     return true;
   return false;  
