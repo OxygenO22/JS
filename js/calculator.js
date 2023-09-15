@@ -37,13 +37,15 @@
     return arrRome;
   };
 
-  const defineIsRomeDigits = () => findRomeDigits().length === 2 ? true : false;
+  //! добавил метод flat(), так как он удаляет пустые значения из массива
+  const defineIsRomeDigits = () => findRomeDigits().flat().length === 2 ? true : false;
   
   if (defineIsRomeDigits()) {
     a = findRomeDigits()[0];
     b = findRomeDigits()[1];
   } else {
-    if (findRomeDigits().length === 1) {
+    //! добавил метод flat(), так как он удаляет пустые значения из массива 
+    if (findRomeDigits().flat().length === 1) { 
       throw Error('Используются одновременно разные системы счисления!');
     } else {
       a = +arr[0];
@@ -97,7 +99,8 @@
     return rezult;
   }
 
-  if (a !== 0 && a <= 10 &&  b !== 0 && b <= 10) {
+  //! Заменил а !== 0 на а > 0
+  if (a > 0 && a <= 10 &&  b > 0 && b <= 10) {
     if (defineIsRomeDigits()) {
       return console.log(makeAnswerInRome(makeCalculate(a, b, defineIsRomeDigits())));
     } else {
@@ -110,4 +113,4 @@
 }
 
 //calculator('I - X');
-calculator('5 - 1'); */
+calculator('IV * X'); */
