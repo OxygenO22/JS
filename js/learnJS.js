@@ -1,3 +1,5 @@
+// ********************* Objects *******************
+
 // 1
 
 /* function hello(name) {
@@ -136,3 +138,58 @@ let permissions2 = { canEdit: true };
 Object.assign(user, permissions1, permissions2);
 
 console.log(user) */
+
+
+// ********************* String *******************
+
+// 1 
+
+/* let str = 'вася';
+
+let makeFirstToCapital = (str) => str.at(0).toUpperCase() + str.slice(1);
+
+console.log(makeFirstToCapital(str)); */
+
+// 2
+
+/* let checkSpam = (str) => str.toLowerCase().includes('viagra') || str.toLowerCase().includes('xxx') ? true : false;
+
+console.log(checkSpam('buy ViAgRA now'));
+console.log(checkSpam('free xxxxx'));
+console.log(checkSpam("innocent rabbit")); */
+
+// 3
+
+/* let truncate = (str, maxLength) => str.length > maxLength ? str.slice(0, maxLength - 1) + '...' : str;
+
+console.log(truncate("Вот, что мне хотелось бы сказать на эту тему:", 20));
+console.log(truncate("Всем привет!", 20)); */
+
+// 4
+
+/* let extractCurVal = (str) => +str.slice(1);
+
+console.log(extractCurVal('$120')); */
+
+
+// ********************* Array *******************
+
+// 1
+
+/* let camelize = (str) => {
+  let workingArr = str.split('-').map((item, index) => index == 0 ? item : item.at(0).toUpperCase() + item.slice(1));
+  return workingArr.join('');
+}
+
+console.log(camelize("background-color"));
+console.log(camelize("list-style-image"));
+console.log(camelize("-webkit-transition")); */
+
+// 2
+
+/* let arr = [5, 3, 8, 1];
+
+let filterRange = (arr, a, b) => arr.filter(item => (item >= a && item <= b));
+
+console.log(filterRange(arr, 1, 4));
+console.log(arr); */

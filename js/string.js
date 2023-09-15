@@ -36,8 +36,9 @@ console.log(insert_dash(str)) */
 /* let str = "string not starting with capital";
 
 let cursive_letter = (str) =>
-   // return str.charAt(0).toUpperCase() + str.slice(1);
-   return str[0].toUpperCase() + str.slice(1);
+   str.charAt(0).toUpperCase() + str.slice(1);
+   str[0].toUpperCase() + str.slice(1);
+   str.at(0).toUpperCase() + str.slice(1);
 
 document.writeln(cursive_letter(str)); // "String not starting with capital"
 console.log(cursive_letter(str)) */
@@ -59,7 +60,7 @@ let capitalize = (str) => {
    //}
    //return newArr.join(' ');
    //or
-   let result = str.split(' ').map(items => items[0].toUpperCase() + items.slice(1));
+   let result = str.split(' ').map(items => items.at(0).toUpperCase() + items.slice(1));
    return result.join(' ');
    
 }
@@ -126,6 +127,8 @@ function remove_char(str) {
    for (item of arr) {
       if (item.codePointAt() >= 65 && item.codePointAt() <= 90 || item.codePointAt() >= 97 && item.codePointAt() <= 122 || item.codePointAt() >= 48 && item.codePointAt() <= 57 || item.codePointAt() == 32) {
          sortItemArr.push(item);
+      } else {
+         sortItemArr.push(' ');
       }
    }
    let str2 = sortItemArr.join('');
@@ -143,7 +146,7 @@ console.log(remove_char(str)); // "every hunter wishes to know" */
 
 //
 /* 8. Нулевое заполнение строки
-Напишите функцию zeros(num, len), которая дополняет нулями до указаной длины числовое значение с дополнительным знаком «+» или « -« в зависимости от передаваемого аргумента. */
+Напишите функцию zeros(num, len), которая дополняет нулями до указаной длины числовое значение с дополнительным знаком «+» или «-» в зависимости от передаваемого аргумента. */
 
 /* function zeros(num, len, sign) {
 
