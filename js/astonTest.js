@@ -121,3 +121,37 @@ b(); */
 //- 13 - Пустому новому объекту
 
 /* Чему равняется контекст в момент вызова функции через оператор new? - Пустому новому объекту */
+
+
+//- 12 - NaN, NaN, NaN 
+
+/* Что будет в консоле, после того как три раза нажмем на кнопку? */
+
+/* class GODListener {
+  constructor() {
+    this.counter = 0;
+  }
+
+  handleClick() {
+    this.counter += 1;
+    console.log(this.counter);
+  }
+}
+
+const element = document.getElementById('testBtn');
+const listener = new GODListener();
+
+element.addEventListener('click', listener.handleClick); */
+
+
+//- 11 - ['10', '210', '10']
+/* Что будет в консоле после исполнения кода? */
+
+/* const str = 'h2h40h';
+
+const result = str
+  .split('h')
+  .map(s => s + 10) 
+  .filter(s => s.length < 4);
+
+  console.log(result) */
