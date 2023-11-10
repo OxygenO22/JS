@@ -155,3 +155,99 @@ const result = str
   .filter(s => s.length < 4);
 
   console.log(result) */
+
+
+  //- 10
+
+  /* Что записывается в свойство [[Scope]] функции? - Текущий LexicalEnvironment или window */
+
+
+  //+ 9
+
+  /* Что делает метод preventDefault - Отменяет действие события браузера */
+
+
+  //- 8 - 2
+
+  /* Что будет выведено в консоль? */
+
+  /* console.log(0 || 1 && 2 || 3) */
+
+
+  //+ 7 
+
+  /* Какой из четырех способов приведет к ожидаемому результату? */
+
+  /* const obj1 = {
+    x: 10
+  }
+
+  //----1 - Error
+  //const obj2 = Object.create(obj1.x);
+  //----2 - Error
+  //const obj2 = obj1.create('x');
+  //----3 - Error
+  //const obj2 = obj1.create({x: 10});
+  //----4 - Works
+  const obj2 = Object.create(obj1);
+
+  console.log(obj2.x) */
+
+
+  //+ 6 
+
+  /* За что отвечает свойство overflow? - управляет тем, как ведёт себя содержимое блочного элемента, если его размер превышает допустимую длину/ширину. */
+
+  //- 5 - has
+
+  /*  Какую из четырех строк необходимо дописать, чтобы получить желаемый результат? */
+
+  /* const V_S = new Set(['SUCCESS', 'FINAL', 'DONE']);
+
+  const people = [
+    {name: 'Max', age: 20, status: 'IN_PROGRESS'},
+    {name: 'Sam', age: 21, status: 'DONE'},
+    {name: 'Dan', age: 30, status: 'SUCCESS'},
+  ]
+
+  const peopleWVS = people.filter(p => V_S.has(p.status)).map(p => p.name)
+
+  console.log(peopleWVS) // ['Sam', 'Dan'] */
+
+
+  //+ 4 
+
+  /* Существует ли возможность на странице, полученной с одного домена отправить запрос на другой домен? - Да, можно воспользоваться CORS и указать на стороне сервера дополнительные заголовки HTTP запроса */
+
+
+  //+ 3 - 3,2,1
+
+  /* Что будет выведено в консоль? */
+
+  /* setTimeout(function timeout() {
+    console.log('1');
+  }, 0)
+
+  Promise.resolve('2').then(console.log);
+
+  console.log('3'); */
+
+  //+ 2 
+
+  /* Какое будет положение у блока с id="child" внутри блока id="parent"? -  блок child будет горизонтально по центру, а вертикально в верху*/
+
+  //- 1 - 10, underfined
+
+  /* Что будет выведено в консоль? */
+
+  /* async function bar() {
+    return Promise.resolve(10);
+  }
+
+  async function foo() {};
+
+  const res1 = foo();
+  const res2 = bar();
+
+  console.log(res1, res2); */
+

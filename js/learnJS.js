@@ -193,3 +193,69 @@ let filterRange = (arr, a, b) => arr.filter(item => (item >= a && item <= b));
 
 console.log(filterRange(arr, 1, 4));
 console.log(arr); */
+
+
+// ********************* This *******************
+
+
+// 1
+
+/* let user = { name: "John" };
+let admin = { name: "Admin" };
+
+function sayHi() {
+  alert( this.name );
+}
+
+// используем одну и ту же функцию в двух объектах
+user.f = sayHi;
+admin.f = sayHi;
+
+// эти вызовы имеют  разное значение this
+// "this" внутри функции - это объект "перед точкой"
+user.f(); // John  (this == user)
+admin.f(); // Admin  (this == admin)
+
+admin['f'](); // Admin (нет разницы между использованием точки или квадратных скобок для доступа к объекту) */
+
+
+// 2
+
+/* let ladder = {
+  step: 0,
+  up() {
+    this.step++;
+    return this;
+  },
+  down() {
+    this.step--;
+    return this;
+  },
+  showStep() {
+    alert( this.step );
+    return this;
+  }
+};
+
+ladder
+  .up()
+  .up()
+  .down()
+  .showStep() // 1
+  .down()
+  .showStep(); // 0 */
+
+
+  // 3 
+
+  for (let i = 0; i < 10; i++) {
+    const btn = document.createElement('button');
+
+    btn.appendChild(document.createTextNode('button ' + i));
+
+    btn.addEventListener('click', () => {
+      alert('button ' + i);
+    });
+
+    document.body.appendChild(btn);
+  }
