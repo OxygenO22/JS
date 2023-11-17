@@ -248,7 +248,7 @@ ladder
 
   // 3 
 
-  for (let i = 0; i < 10; i++) {
+  /* for (let i = 0; i < 10; i++) {
     const btn = document.createElement('button');
 
     btn.appendChild(document.createTextNode('button ' + i));
@@ -258,4 +258,4 @@ ladder
     });
 
     document.body.appendChild(btn);
-  }
+  } */
