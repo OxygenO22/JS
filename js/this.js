@@ -38,3 +38,36 @@ for (let x in person) {
   }
   outer(); */
 
+
+  // 3 
+
+  /* function User(name, isAdmin) {
+    this.name = name;
+    this.isAdmin = isAdmin;
+  }
+
+  let userJack = new User('Jack', true);
+  let userAnn = new User('Ann', false);
+
+  console.log(userJack.name);
+  console.log(userJack.isAdmin);
+
+  console.log(userAnn.name);
+  console.log(userAnn.isAdmin); */
+
+
+  // 4 
+
+  function User(name) {
+    this.name = name;
+
+    this.sayHi = function() {
+      alert('My name: ' + this.name);
+    };
+  }
+
+  let john = new User('John');
+
+  john.sayHi();
+
+
