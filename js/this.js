@@ -58,7 +58,7 @@ for (let x in person) {
 
   // 4 
 
-  function User(name) {
+  /* function User(name) {
     this.name = name;
 
     this.sayHi = function() {
@@ -68,6 +68,44 @@ for (let x in person) {
 
   let john = new User('John');
 
-  john.sayHi();
+  john.sayHi(); */
 
 
+  // 5 calculator
+
+  /* function Calculator() {
+
+    this.a = +prompt('Enter a: ', 0);
+    this.b = +prompt('Enter b: ', 0);
+
+    this.sum = function() {
+      return this.a + this.b;
+    };
+
+    this.mul = function() {
+      return this.a * this.b; 
+    };
+  }
+
+  let calc = new Calculator();
+
+  alert('Sum = ' + calc.sum());
+  alert('Mul = ' + calc.mul()); */
+  
+  
+  // 6 accumulator
+  
+  /* function Accumulator(startingValue) {
+    this.value = startingValue;
+
+    this.read = function() {
+      this.value += +prompt('Enter your number ');
+    };
+  }
+
+  let accumulator = new Accumulator(1);
+
+  accumulator.read();
+  accumulator.read();
+
+  alert(accumulator.value) */
