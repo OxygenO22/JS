@@ -126,7 +126,7 @@ document.writeln(vowel_count('Web Development Tutorial')); //9 */
 
 
 //
-/* function filter_list(l) {
+function filter_list(l) {
    let array = [];
    return l.map(num => {
       if ((typeof num) != 'string') {
@@ -135,7 +135,7 @@ document.writeln(vowel_count('Web Development Tutorial')); //9 */
    })
 }
 
-console.log(filter_list([1, 2, 'a', 'b'])); //[1,2] */
+console.log(filter_list([1, 2, 'a', 'b'])); //[1,2]
 
 //
 //function-constructor
