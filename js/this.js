@@ -109,3 +109,34 @@ for (let x in person) {
   accumulator.read();
 
   alert(accumulator.value) */
+
+
+  //7 promise
+
+  /* let promise = new Promise(function(resolve, reject) {
+    
+  setTimeout(() => resolve(console.log("done")), 1000);
+}); */
+
+/* function F() { return F; }
+
+alert(new F() instanceof F);
+alert(new F() instanceof Function); */
+
+/* let x = 50;
+
+if( x <= 100 ) {
+  console.log('Wow')
+}
+
+if( !(x > 100) ) {
+  console.log('Wow 2')
+} */
+
+/* 'use strict'
+console.log(typeof null) */
+
+
+/* let f = function(a,b) { return console.log(a+b) }
+
+f(1,2) */
