@@ -4,9 +4,8 @@
 /* 1. Переверните число задом наперед
 Напишите функцию JavaScript, которая переворачивает число. */
 
-/* function reverse_a_number(n) {
-   return +n.toString().split('').reverse().join('');
-};
+/* const reverse_a_number = (n) => +n.toString().split('').reverse().join('');
+
 document.writeln(reverse_a_number(258961)); // 169852
 console.log(reverse_a_number(258961)); // 169852 */
 
@@ -181,5 +180,5 @@ console.log(c, d, rest);
 let { e, f } = { e: 10, f: 20 };
 console.log(e, f);
 
-let { g, h, ...ost } = { g: 1, h: 2, j: 3, k: 4, l: 5 };
-console.log(g, h, ost); */
+let { j, h, ...ost } = { g: 1, h: 2, j: 3, k: 4, l: 5 };
+console.log(j, h, ost); */

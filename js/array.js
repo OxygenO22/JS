@@ -8,7 +8,7 @@
 function arrayClone(arr) {
 
    console.log([...arr]); //or
-   console.log(arr.slice(0));
+   console.log(arr.slice());
    return [...arr];
 }
 var arr1 = arrayClone(vegetables);
@@ -161,3 +161,25 @@ console.log(chooseYears(2000, 2018)); // [2000,2004,2008,2012,2016] */
 var array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 //console.log(shuffle(array));
 shuffle(array); */
+
+
+//
+/* 8. Убрать вложенность массива */
+
+/* let arr = [1, 2, [3, 4, [5, 6]]];
+let arr2 = arr.flat(2);
+let arr3 = arr.flat(Infinity);
+console.log(arr2);
+console.log(arr3); */
+
+function outer() {
+   let count = 0;
+   return function inner() {
+      count++;
+      console.log(count);
+   }
+}
+
+const myFunc = outer();
+myFunc();
+myFunc();

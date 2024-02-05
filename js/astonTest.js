@@ -150,8 +150,8 @@ element.addEventListener('click', listener.handleClick); */
 /* const str = 'h2h40h';
 
 const result = str
-  .split('h')
-  .map(s => s + 10) 
+  .split('h') 
+   .map(s => s + 10) 
   .filter(s => s.length < 4);
 
   console.log(result) */
@@ -159,7 +159,7 @@ const result = str
 
   //- 10
 
-  /* Что записывается в свойство [[Scope]] функции? - Текущий LexicalEnvironment или window */
+  /* Что записывается в свойство [[Scope]] функции? - не  текущий LexicalEnvironment, а на window */
 
 
   //+ 9
@@ -230,13 +230,13 @@ const result = str
 
   Promise.resolve('2').then(console.log);
 
-  console.log('3'); */
-
+  console.log('3');
+ */
   //+ 2 
 
   /* Какое будет положение у блока с id="child" внутри блока id="parent"? -  блок child будет горизонтально по центру, а вертикально в верху*/
 
-  //- 1 - 10, underfined
+  //- 1 - underfined, 10
 
   /* Что будет выведено в консоль? */
 
