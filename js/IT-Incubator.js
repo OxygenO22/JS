@@ -212,11 +212,11 @@ console.log(nestedVal1)
 console.log(thirdVal)
 console.log(find) */
 
-const arr = [1, 2, 3];
+/* const arr = [1, 2, 3];
 
 const Hello = ([first, ...rest]) => {
   console.log(first)
-  console.log(firrestst)
+  console.log(rest)
 } 
 
-Hello(arr)
+Hello(arr) */
