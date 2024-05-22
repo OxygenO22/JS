@@ -172,7 +172,7 @@ let arr3 = arr.flat(Infinity);
 console.log(arr2);
 console.log(arr3); */
 
-function outer() {
+/* function outer() {
    let count = 0;
    return function inner() {
       count++;
@@ -182,4 +182,4 @@ function outer() {
 
 const myFunc = outer();
 myFunc();
-myFunc();
+myFunc(); */

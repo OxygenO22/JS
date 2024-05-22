@@ -72,3 +72,142 @@ console.log( fib(3) ); // 2
 console.log( fib(7) ); // 13
 console.log( fib(8) ); // 21
 console.log( fib(77) ); // 5527939700884757 */
+
+
+//////// JS Native ///////////////////////////////////////////////////////////
+
+//// Спринт 1 неделя 1
+
+ /* const users1 = {
+ // #890--99876
+ id: 1,
+ name: 'Bob',
+ isStudent: true,
+ };
+
+
+ const users2 = {...users1};
+
+ console.log(users1 === users2); */
+
+ /////
+
+ /* const users = [
+{
+id: 1,
+name: 'Bob',
+isStudent: true,
+},
+{
+id: 2,
+name: 'Alex',
+isStudent: true,
+},
+{
+id: 3,
+name: 'Ann',
+isStudent: true,
+},
+{
+id: 4,
+name: 'Donald',
+isStudent: true,
+},
+]; */
+
+///
+
+/* const superUser = {
+  id: 10,
+    name: 'Clementina DuBuque',
+    username: 'Moriah.Stanton',
+    email: 'Rey.Padberg@karina.biz',
+      address: {
+        street: 'Kattie Turnpike',
+        suite: 'Suite 198',
+        city: 'Lebsackbury',
+        zipcode: '31428-2261',
+      geo: {
+        lat: '-38.2386',
+        lng: '57.2232',
+      },
+    },
+    phone: '024-648-3804',
+    website: 'ambrose.net',
+    company: {
+      name: 'Hoeger LLC',
+      catchPhrase: 'Centralized empowering task-force',
+      bs: 'target end-to-end models',
+  },
+};
+
+
+const superUser2 =  structuredClone(superUser);
+
+superUser2.address.city = 'Minsk' 
+
+console.log('superUser :', superUser)
+console.log('superUser2 :', superUser2) */
+
+
+/// деструктуризация
+/* const employee = {
+  firstName: 'Ivan',
+  lastName: 'Ivanov',
+  midlName: undefined,
+}
+
+const firstName = 'Nina';
+
+const { firstName: name, lastName, midlName = 'No midlName' } = employee;
+
+console.log('midlName :', midlName);
+console.log('firstName :', firstName);
+console.log('name :', name);
+ */
+
+///
+
+/* const employee1 = {
+  firstName: 'Ivan',
+  lastName: 'Ivanov',
+  middleName: 'Ivanovich',
+  message: 'Hello world!',
+  permission: {
+    canEdit: true,
+    canDelete: false,
+    role: 'user',
+  },
+};
+
+const { permission: { canDelete, canEdit }, } = employee1;
+
+console.log('canDelete :', canDelete); */
+
+//// arrays
+
+
+//case1
+/* const colors = ['red', 'blue', 'green', 'white', 'black'];
+
+const [firstEl, secondEl] = colors;
+ */
+//case2
+
+/* const colors = [{t: 1}, 'blue', 'green', 'white', 'black'];
+
+const [firstEl, secondEl, , whiteWalue] = colors;
+
+console.log(firstEl.t)
+console.log(whiteWalue) */
+
+//case3
+
+/* const colors = ['red', ['first val', 'sec val'], ,];
+
+const [firstEl, [nestedVal1], thirdVal = 'test', find ] = colors;
+
+console.log(firstEl)
+console.log(nestedVal1)
+console.log(thirdVal)
+console.log(find) */
