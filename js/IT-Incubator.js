@@ -211,3 +211,12 @@ console.log(firstEl)
 console.log(nestedVal1)
 console.log(thirdVal)
 console.log(find) */
+
+const arr = [1, 2, 3];
+
+const Hello = ([first, ...rest]) => {
+  console.log(first)
+  console.log(firrestst)
+} 
+
+Hello(arr)
