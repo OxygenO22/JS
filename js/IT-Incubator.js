@@ -76,6 +76,7 @@ console.log( fib(77) ); // 5527939700884757 */
 
 //////// JS Native ///////////////////////////////////////////////////////////
 
+
 //// Спринт 1 неделя 1
 
  /* const users1 = {
@@ -263,3 +264,314 @@ console.log(`user :` , user);
 console.log(`user2 :`, user2); */
 
 
+//// Спринт 1 неделя 2
+
+// push, pop, shift, unshift
+
+/* const names = ['Alex', 'Bob', 'Ivan', 'Sasha'];
+
+const res = names.push('New name');
+
+console.log('names: ', names)
+console.log('res: ', res) */
+
+//// pop
+
+/* const names = [];
+
+const popRes = names.pop()
+
+console.log('names: ', names)
+console.log('popRes: ', popRes) */
+
+
+//// shift
+
+/* const names = ['Alex', 'Bob', 'Ivan', 'Sasha'];
+
+const shiftedRes = names.shift()
+
+console.log('names: ', names) */
+
+//// unshift
+
+/* const names = ['Alex', 'Bob', 'Ivan', 'Sasha'];
+
+const shiftedRes = names.unshift('new name')
+
+console.log('names: ', names) */
+
+//// reverse
+
+/* const arr = [1, 2, 3];
+
+arr.reverse(); */
+
+/// split - строка в массив
+
+/*
+
+//1
+const str = 'ab-cd-ef';
+
+const strArr = str.split('-')
+
+console.log("strArr: ", strArr) */
+
+
+//2
+/* const str = 'ab-cd-ef';
+
+const strArr = str.split('-', 2)
+
+console.log("strArr: ", strArr) */
+
+
+/// join - массив в строку 
+
+/* const names = ['Alex', 'Bob', 'Ivan', 'Sasha'];
+
+const joinedRes = names.join(', ')
+
+console.log("joinedRes: ", joinedRes) */
+
+/// 
+/* const telephoneNumber = '123456789';
+
+const res = telephoneNumber.split('').reverse().join('')
+
+console.log("joinedRes: ", res) */
+
+///// concat
+
+/* const arr1 = [1, 2];
+const arr2 = [3, 4];
+const arr3 = [5, 6];
+const nestedArr = [[5, 6], [7, 8, [9, 10]]];
+
+const res = arr1.concat(arr2, arr3);
+
+console.log('res: ', res) */
+
+/// flat
+
+/* const arr1 = [1, 2];
+const arr2 = [3, 4];
+const arr3 = [5, 6];
+const nestedArr = [[5, 6], [7, 8, [9, 10]]];
+
+const res2 = arr1.concat(arr2, arr3, nestedArr);
+
+console.log('res: ', res2)
+
+const res3 = res2.flat(Infinity)
+
+console.log('res3: ', res3) */
+
+/// forEach !!!!
+
+/* const arr = [1, 2, 3, 4]
+let sum = 0;
+
+const res = arr.forEach((el) =>  {
+  return sum += el;
+}) 
+
+console.log('res: ', res) */
+
+//// indexof()
+
+/* const arr = [1, 2, 3, 4]
+
+const res = arr.indexOf(3)// 2
+
+console.log(res) */
+
+//// lastIndexof()
+
+/* const arr = [1, 2, 3, 4]
+
+const res = arr.lastIndexOf(4)// 3
+
+console.log(res) */
+
+
+///find
+
+/* const strArr = ['str', 'strststs', 'fgfgf', 'dff', 'fgdgfdgd'];
+
+const res = strArr.find((el) => {
+  return el.length === 3
+})// 3
+
+console.log(res) */
+
+/* const strArr = [1, 2, 3, 4, 5];
+
+const res = strArr.find((el) => {
+  return  el % 2 === 0
+})
+
+console.log(res)
+ */
+
+
+/// includes
+
+/* const num = [1, 2, 3, 4, 5];
+const res = num.includes(5)
+console.log(res) */
+
+
+///filter
+
+/* const words = ['spray', 'elite', 'exuberant', 'destruction', 'present'];
+
+const res = words.filter(str => str.length > 5)
+
+console.log('res: ', res) */
+
+/// sort - мутирует
+
+//1 
+
+/* const names = ['Alex', '!alex', 'alex', 'Виктор', 'Dymych', 'Valera', 'Igor', 'Ignat'];
+const numbers = [1, 2, -3525523, 366643, -3, 15215];
+
+console.log(numbers.sort()) // по юникоду
+console.log(numbers.sort((a, b) => a - b))
+console.log(numbers.sort((a, b) => b - a))
+console.log(names.sort()) /// по юникоду
+console.log(names.sort((a, b) => a - b)) //!!! сортируется по номерам в юниткоде
+console.log(names.sort( (a, b) => a.localeCompare(b) )) //!!! для строк
+
+console.log(names === names.sort((a, b) => a - b)) */
+
+//2
+/* const numbers = [1, 2, -3525523, 366643, -3, 15215];
+
+const res = numbers.sort((a, b) => a - b)
+
+console.log(numbers.sort((a, b) => a - b)) */
+
+//3
+
+/* const users = [
+{
+id: 1,
+name: 'Bob',
+isStudent: true,
+},
+{
+id: 2,
+name: 'Alex',
+isStudent: true,
+},
+{
+id: 3,
+name: 'alex',
+isStudent: true,
+},
+];
+
+console.log(users.sort((a, b) => a.name.localeCompare(b.name))) */
+
+// toSorted() - работает как sort, но не мутирует!!!!! 
+
+/* const users = [
+{
+id: 1,
+name: 'Bob',
+isStudent: true,
+},
+{
+id: 2,
+name: 'Alex',
+isStudent: true,
+},
+{
+id: 3,
+name: 'alex',
+isStudent: true,
+},
+];
+
+console.log(users.toSorted((a, b) => a.name.localeCompare(b.name))) */
+
+
+
+/* const users1 = [
+{
+id: 1,
+name: 'Bob',
+isStudent: true,
+},
+{
+id: 2,
+name: 'Alex',
+isStudent: true,
+},
+{
+id: 3,
+name: 'Ann',
+isStudent: true,
+},
+{
+id: 4,
+name: 'Donald',
+isStudent: false,
+},
+];
+const res = users1.map(s => s.name)
+
+console.log(res) */
+
+// полифилы
+
+const users1 = [
+{
+id: 1,
+name: 'Bob',
+isStudent: true,
+},
+{
+id: 2,
+name: 'Alex',
+isStudent: true,
+},
+{
+id: 3,
+name: 'Ann',
+isStudent: true,
+},
+{
+id: 4,
+name: 'Donald',
+isStudent: false,
+},
+];
+
+const newMap = (arr) => {
+  const res = []
+
+  for( let i = 0; i < arr.length; i++) {
+    res.push(arr[i].name)
+  }
+
+  return console.log(res) 
+}
+
+//или
+newMap(users1)
+
+const newMap1 = (arr, callback) => {
+  const res = []
+
+  for( let i = 0; i < arr.length; i++) {
+    res.push(callback(arr[i]))
+  }
+
+  return console.log(res) 
+}
+
+newMap1(users1, (user) => user.name)
