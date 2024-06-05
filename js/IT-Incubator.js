@@ -540,3 +540,164 @@ newMap1(users1, (user) => user.name) */
 
 ///////////////////////////////////////////////////// Sprint 1 Lesson 3
 
+
+//// slice(откуда отрезать, [докуда отрезать]) - не мутирует
+
+
+/* let arr = ["t", "e", "s", "t", 'i', 'n', 'g'];
+
+let twoParArr = arr.slice(1, 3);
+
+let subArr = arr.slice();
+
+console.log( 'arr: ', arr );
+console.log( arr === subArr );
+console.log( arr.slice(0, 3) );
+console.log( arr.slice(1, 3) );
+console.log( arr.slice(-2) ); */
+
+
+//// splice(откуда удаляем, сколько удаляем, вставить, вставить...); - мутирует
+
+/* let arr = ["t", "e", "s", "t", 'i', 'n', 'g'];
+
+let subArr = arr.splice(1, 3);
+
+let subAddArr = arr.splice(0, 0, 'test 1', ' test 2')
+
+console.log('arr: ', arr)
+console.log("subArr: ", subArr)
+console.log("subAddArr: ", subAddArr) */
+
+
+//// toSpliced() - as splice() только не мутабельный
+
+
+/* const months = ['Jan', 'Mar', 'Apr', 'May'];
+
+const newMonth = months.toSpliced(1, 0, 'Feb')
+
+console.log('months: ', months)
+console.log('newMonth: ', newMonth) */
+
+
+//// reduce((acc, item, index) => {} , startValue)
+
+
+// 1
+
+
+/* let a = [1, 2, 3, 4 ,5];
+let res = a.reduce((sum, curr) => sum + curr, 0);
+console.log('res: ', res) */
+
+
+// 2
+
+
+/* const fruits = [
+{ name: 'apple', quantity: 2 },
+{ name: 'banana', quantity: 3 },
+{ name: 'orange', quantity: 1 },
+];
+
+const totalQuantyty = fruits.reduce((prev, fruit) => prev + fruit.quantity , 0);
+console.log('totalQuantyty: ', totalQuantyty) */
+
+
+// 3
+
+
+// 3.1
+
+/* const numbers = [5, 6, 7, 10, 6, 7];
+const maxNumber = numbers.reduce((prev, curr) => curr > prev ? curr : prev, numbers[0]);
+console.log('maxNumber: ', maxNumber); */
+
+
+// 3.2
+
+/* const numbers1 = [5, 6, 7, 10, 6, 7];
+const max = Math.max(...numbers1);
+console.log('max: ', max); */
+
+
+// 4
+
+/* const people = [
+{ name: 'Vika', age: 25, budget: 4500 },
+{ name: 'Nikita', age: 45, budget: 35000 },
+{ name: 'Igor', age: 55, budget: 340 },
+{ name: 'Insaf', age: 65, budget: 50000 },
+{ name: 'Alyona', age: 75, budget: 20 },
+]; // {names: [...], totalAges: ...} 
+
+ const result = people.reduce((acc, user) => {
+  acc.names.push(user.name);
+  acc.totalAges += user.age;
+  acc.totalBudget += user.budget;
+  return acc;
+}, {names: [], totalAges: 0, totalBudget: 0})
+
+console.log('result:', result) */
+
+
+// 5
+
+
+/* const people = [
+{ name: 'Vika', age: 25, budget: 4500 },
+{ name: 'Nikita', age: 45, budget: 35000 },
+{ name: 'Igor', age: 55, budget: 340 },
+{ name: 'Insaf', age: 65, budget: 50000 },
+{ name: 'Alyona', age: 75, budget: 20 },
+]; */
+//1
+
+/* const totalBudget = people.reduce((acc, cur) => acc + cur.budget, 0);
+
+console.log('totalBudget:', totalBudget); */
+
+//!!!!!2 {totalBudget: [], names: []}
+
+const people1 = [
+{ name: 'Vika', age: 25, budget: 4500 },
+{ name: 'Nikita', age: 45, budget: 35000 },
+{ name: 'Igor', age: 55, budget: 340 },
+{ name: 'Insaf', age: 65, budget: 50000 },
+{ name: 'Alyona', age: 75, budget: 20 },
+];
+
+
+const res = people1.reduce((acc, user) => {
+  acc.names.push(user.name);
+  
+  console.log('total: ', acc.totalBudget[0] += user.budget)
+  return acc;
+}, { totalBudget: [0], names: []})
+
+
+console.log('res:', res);
+
+
+// 3
+
+/* const words = ['Hello', ' ', 'word', '!']
+
+const res = words.reduce((acc, el)=> {
+  return acc + el
+}, '') 
+
+
+console.log(res) */
+
+
+// 4 minVal
+
+/* const arr = [1, 20, 30, 2]
+
+const minVal = arr.reduce((acc, el) => {
+  return el < acc ? el : acc
+})
+
+console.log(minVal) */
