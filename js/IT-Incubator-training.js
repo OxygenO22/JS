@@ -147,4 +147,211 @@ console.log('age: ', age); */
 //// 1
 
 
-let fruits = ['apple', 'banana', 'orange'];
+/* let fruits = ['apple', 'banana', 'orange'];
+
+fruits.push('pinapple');
+fruits.push('watermelon');
+
+console.log('fruits: ', fruits); */
+
+
+//// 2
+
+
+/* const users = [
+ {
+   id: 1,
+   name: 'Bob',
+   isStudent: true,
+ },
+ {
+   id: 2,
+   name: 'Alex',
+   isStudent: true,
+ },
+ {
+   id: 3,
+   name: 'Ann',
+   isStudent: true,
+ },
+ {
+   id: 4,
+   name: 'Donald',
+   isStudent: false,
+ },
+];
+
+
+const lastUser = users.pop();
+
+console.log('lastUser: ', lastUser);
+console.log('users: ', users); */
+
+
+//// 3
+
+
+/* const users = [
+ {
+   id: 1,
+   name: 'Bob',
+   isStudent: true,
+ },
+ {
+   id: 2,
+   name: 'Alex',
+   isStudent: true,
+ },
+ {
+   id: 3,
+   name: 'Ann',
+   isStudent: true,
+ },
+ {
+   id: 4,
+   name: 'Donald',
+   isStudent: false,
+ },
+];
+
+const firstUser = users.shift();
+
+console.log('firstUser: ', firstUser);
+console.log('users: ', users); */
+
+
+//// 4
+
+
+/* const users = [
+ {
+   id: 1,
+   name: 'Bob',
+   isStudent: true,
+ },
+ {
+   id: 2,
+   name: 'Alex',
+   isStudent: true,
+ },
+ {
+   id: 3,
+   name: 'Ann',
+   isStudent: true,
+ },
+ {
+   id: 4,
+   name: 'Donald',
+   isStudent: false,
+ },
+];
+
+users.unshift({id: 0, name: "Test", isStudent: false})
+
+console.log('users: ', users); */
+
+
+//// 5
+
+
+/* const str = 'JavaScript is awesome';
+
+const res = str.split(' ').reverse().join(' ');
+
+console.log('res: ', res); */
+
+
+//// 6
+
+
+/* const mergeArrays = (arr1, arr2) => arr1.concat(arr2);
+
+console.log(mergeArrays([1, 2, 3], [4, 5, 6])); 
+console.log(mergeArrays(['apple', 'banana'], ['orange', 'kiwi']));  */
+
+
+//// 7
+
+
+/* const flattenArray = (arr) => arr.flat(Infinity);
+
+console.log(flattenArray([1, [2, 3], [[4], [5, 6]]])); 
+console.log(flattenArray([1, [2, [3, [4, [5]]]]]));  */
+
+
+//// 8
+
+
+/* const numbers = [10, 20, 30, 40, 50];
+const fruits = ["apple", "banana", "orange", "kiwi"];
+ 
+const findFirstElement = (arr, condition) => arr.find(condition); 
+
+let firstNumberGreaterThan25 = findFirstElement(numbers, (num) => num > 25);
+
+console.log(firstNumberGreaterThan25)
+
+let firstFruitStartingWithO = findFirstElement(fruits, (fruit) => fruit.startsWith('o'));
+console.log(firstFruitStartingWithO);  */
+
+
+//// 9
+
+
+/* let numbers = [1, 2, 3, 4, 5];
+let fruits = ['apple', 'banana', 'orange', 'kiwi'];
+
+const checkElement = (arr, el) => arr.includes(el);
+
+console.log(checkElement(numbers, 3));
+console.log(checkElement(fruits, 'grape'));  */
+
+
+//// 10
+
+
+/* let numbers1 = [10, 20, 30, 40, 50];
+let numbers2 = [5, 15, 25, 35, 45];
+
+const filterGreaterThan = (arr, option) => arr.filter(item => item > option)
+
+console.log(filterGreaterThan(numbers1, 25)); 
+console.log(filterGreaterThan(numbers2, 20)); */ 
+
+
+//// 11
+
+
+/* let people = [
+ { name: 'John', age: 30 },
+ { name: 'Alice', age: 25 },
+ { name: 'Bob', age: 35 },
+];
+
+const sortAlphabeticallyByProperty = (arr, option) => arr.toSorted((a, b) => a[option].localeCompare(b[option]))
+
+console.log(sortAlphabeticallyByProperty(people, 'name'));  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
