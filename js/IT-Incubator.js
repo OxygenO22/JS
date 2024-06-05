@@ -74,10 +74,10 @@ console.log( fib(8) ); // 21
 console.log( fib(77) ); // 5527939700884757 */
 
 
-//////// JS Native ///////////////////////////////////////////////////////////
+//////// //////////////////////////////////////////// JS Native
 
 
-//// Спринт 1 неделя 1
+///////////////////////////////////////////////////// Sprint 1 Lesson 1
 
  /* const users1 = {
  // #890--99876
@@ -185,6 +185,7 @@ const { permission: { canDelete, canEdit }, } = employee1;
 
 console.log('canDelete :', canDelete); */
 
+
 //// arrays
 
 
@@ -222,49 +223,8 @@ const Hello = ([first, ...rest]) => {
 
 Hello(arr) */
 
-////// Home Work
 
-// 1
-
-/* const a = {};
-const b = {};
-const c = a;
-const d = c;
-
-console.log(a === b);
-console.log(a === c);
-console.log(c === d);
-console.log(a === c); */
-
-//2 
-
-/* const a = {};
-const b = a;
-b['test'] = 'test value';
-
-console.log(b === a);
-console.log(a); */
-
-// 3
-
-/* const user = {
- name: 'John',
- address: {
-   city: 'New York',
-   country: 'USA',
- },
-};
-
-const user2 = {...user, address: {...user.address}};
-
-
-user2.address.city = 'Toronto';
-
-console.log(`user :` , user);
-console.log(`user2 :`, user2); */
-
-
-//// Спринт 1 неделя 2
+///////////////////////////////////////////////////// Sprint 1 Lesson 2
 
 // push, pop, shift, unshift
 
@@ -528,7 +488,7 @@ console.log(res) */
 
 // полифилы
 
-const users1 = [
+/* const users1 = [
 {
 id: 1,
 name: 'Bob',
@@ -558,11 +518,11 @@ const newMap = (arr) => {
     res.push(arr[i].name)
   }
 
-  return console.log(res) 
-}
+  return console.log(res)  
+}*/
 
 //или
-newMap(users1)
+/* newMap(users1)
 
 const newMap1 = (arr, callback) => {
   const res = []
@@ -574,4 +534,9 @@ const newMap1 = (arr, callback) => {
   return console.log(res) 
 }
 
-newMap1(users1, (user) => user.name)
+newMap1(users1, (user) => user.name) */
+
+
+
+///////////////////////////////////////////////////// Sprint 1 Lesson 3
+
