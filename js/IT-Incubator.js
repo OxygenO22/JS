@@ -658,9 +658,9 @@ console.log('result:', result) */
 
 console.log('totalBudget:', totalBudget); */
 
-//!!!!!2 {totalBudget: [], names: []}
+//2 {totalBudget: [], names: []}
 
-const people1 = [
+/* const people1 = [
 { name: 'Vika', age: 25, budget: 4500 },
 { name: 'Nikita', age: 45, budget: 35000 },
 { name: 'Igor', age: 55, budget: 340 },
@@ -668,16 +668,14 @@ const people1 = [
 { name: 'Alyona', age: 75, budget: 20 },
 ];
 
-
-const res = people1.reduce((acc, user) => {
-  acc.names.push(user.name);
-  
-  console.log('total: ', acc.totalBudget[0] += user.budget)
+const res = people1.reduce((acc, curr, index) => {
+  acc.names.push(curr.name);
+  let sum = people1.reduce((acc, budg) => acc + budg.budget, 0);
+  people1.length === index + 1 && acc.totalBudget.push(sum)
   return acc;
-}, { totalBudget: [0], names: []})
+}, { totalBudget: [], names: []})
 
-
-console.log('res:', res);
+console.log('res:', res); */
 
 
 // 3
