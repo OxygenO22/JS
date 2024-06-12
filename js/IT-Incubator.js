@@ -699,3 +699,190 @@ const minVal = arr.reduce((acc, el) => {
 })
 
 console.log(minVal) */
+
+
+///////////////////////////////////////////////////// Sprint 1 Lesson 4
+
+
+//// статическое значение
+
+
+/* let obj = {
+  name: 'Bob', // статическое св-во
+  age: 55, // статическое св-во
+} */
+
+/* const createObj = (key, value) => {
+  let newObj = {};
+  newObj[key] = value;
+  return newObj;
+}
+
+console.log(createObj('car', 'BMW')) */
+
+
+//// динамическое значение
+
+
+/* const createObj = (key, value) => {
+  return {
+    [key]: value
+  }
+}
+
+console.log(createObj('car', 'Audi')) */
+
+
+//// 1
+
+
+/* let propName = 'status';
+
+const obj = {
+  name: 'Lohn', // static property
+  [propName]: 'checked', // dynamic property
+}
+
+console.log(obj) */
+
+
+//// 2
+
+
+/* let prefix = 'status_';
+
+const obj2 = {
+  age: 25,
+  [prefix + 'id']: 'new member'
+}
+
+console.log(obj2) */
+
+
+//// 3
+
+
+/* let index = 2;
+let testProp = 'test';
+
+const obj3 = {
+  [index + 2]: 4,
+  [testProp.toUpperCase()]: 'test'
+}
+
+console.log(obj3) */
+
+
+//// 4 
+
+
+/* const STATUS_BUSY = 'busy';
+const STATUS_READY = 'ready';
+
+const STATUS_LABELS = {
+  [STATUS_BUSY]: 'ожидает',
+  [STATUS_READY]: 'готово',
+}
+
+const drivers = [
+  {name: 'Pavel', status: 'busy'},
+  {name: 'Anna', status: 'ready'},
+  {name: 'Kiril', status: 'busy'},
+];
+
+const driverStatuses = drivers.map((driver) => {
+  const {status} = driver;
+  return STATUS_LABELS[status]
+})
+
+console.log(driverStatuses);
+
+// or
+
+
+const driverStatuses1 = drivers.map((driver) => {
+  if (driver.status === STATUS_BUSY) return 'ожидает';
+  if (driver.status === STATUS_READY) return 'готово';
+})
+console.log(driverStatuses1); */
+
+
+//// 5 Object.keys() - работает без вложенностей, возвр массив ключей
+
+
+/* const drivers = {name: 'Pavel', status: 'busy', country: {id: 1}}
+const result = Object.keys(drivers);
+console.log(result); */
+
+
+//// 6 Object.values() - показывает вложенности но не разворачивает их, возвр массив ключей
+
+
+/* const drivers = {name: 'Pavel', status: 'busy', country: {id: 1}}
+const result = Object.values(drivers);
+console.log(result); */
+
+
+//// 7 Object.entries() - показывает вложенности но не разворачивает их, возвр массив массивов
+
+
+/* const drivers = {name: 'Pavel', status: 'busy', country: {id: 1}}
+const result = Object.entries(drivers);
+console.log(result); */
+
+
+//// 8 new Map, new Set
+
+
+//// 8.1 new Map () - коллекция ключ/значение. Ключи могут быть любого типа
+
+/* let map = new Map();
+
+const func = () => alert('hello');
+
+map.set('1', 'string value');
+map.set(2, 'number value');
+map.set(true, 'boolean value');
+map.set([1, 2], 'array value');
+map.set({name: 'Al'}, 'object value');
+map.set(func(), 'func value');
+
+//map.get(func());
+
+console.log(map.get(func()))
+console.log(map.get('1'))
+
+// map.clear(); - очищает
+// map.delete(2) - удаляет по ключу
+
+console.log(map.size)
+console.log(map)
+
+let newMap = new Map([['key', 'value'], [1, 'value 2']])
+console.log(newMap) */
+
+//// 8.2 new Set () - коллекция, которая может содержать только уникальные значения без ключей
+
+
+/* let set = new Set();
+
+set.add('value1');
+set.add('value2');
+set.add('value1');
+set.delete('value1')
+
+console.log(set.has('value1'))
+
+
+console.log(set) */
+
+/* let numbers = [1, 1, 1, 3, 4, 5, 6, 76, 7, 8, 9, 0, 6];
+
+let uniqueNum = new Set(numbers)
+
+//// !!!!
+let uniqueNum2 = [...new Set(numbers)]
+
+console.log(uniqueNum)
+console.log(uniqueNum2)
+console.log([...uniqueNum]) */
