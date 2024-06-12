@@ -141,7 +141,7 @@ console.log('thirdName: ', thirdName);
 console.log('age: ', age); */
 
 
-/////////////////////////// Sprint 2 Lesson 2
+/////////////////////////// Sprint 1 Lesson 2
 
 
 //// 1
@@ -333,6 +333,115 @@ const sortAlphabeticallyByProperty = (arr, option) => arr.toSorted((a, b) => a[o
 console.log(sortAlphabeticallyByProperty(people, 'name'));  */
 
 
+
+/////////////////////////// Sprint 1 Lesson 3
+
+
+//// Задачи на закрепления slice
+
+
+//// 1
+
+
+/* let str = 'Hello, world!';
+let startIndex = 7;
+
+const getSubStr = (str, startIndex) => str.slice(startIndex);
+
+
+console.log(getSubStr(str, startIndex)); */
+
+
+//// 2
+
+
+/* const getLastElements = (arr, endIndex) => arr.slice(-endIndex)
+
+console.log(getLastElements([1, 2, 3, 4, 5], 3)); */ 
+
+
+//// 3
+
+
+/* const extractPath = (str, startIndex) => str.slice(startIndex);
+
+console.log(extractPath('https://example.com/blog/article', 19)); */
+
+
+//// Задачи на splice
+
+
+/// 1
+
+
+/* let numbers = [1, 2, 3, 4, 5];
+
+const removeElement = (numbers, indexForDel) => {
+  numbers.splice(indexForDel, 1);
+  return numbers;
+}
+
+console.log(removeElement(numbers, 2)); */
+
+
+/// 2
+
+
+/* let numbers = [1, 2, 4, 5];
+
+const insertElement = (numbers, index, newEl) => {
+  numbers.splice(index, 0, newEl)
+  return numbers;
+} 
+
+console.log(insertElement(numbers, 2, 3)); */
+
+
+//// Задачи на reduce
+
+
+/// 1
+
+
+/* let numbers = [1, 2, 3, 4, 5];
+
+const sumArray = (numbers) => numbers.reduce((acc, curr) => acc + curr, 0);
+
+console.log(sumArray(numbers));  */
+
+
+/// 2
+
+
+/* const sumStringLengths = (arr) => arr.reduce((acc, cur) => acc + cur.length, 0);
+
+console.log(sumStringLengths(['apple', 'banana', 'cherry']));  */
+
+
+/// 3
+
+
+/* const sumNestedArrays = (arr) => arr.flat(Infinity).reduce((acc, cur) => acc + cur, 0);
+
+console.log(sumNestedArrays([[1, 2], [3, 4, 5], [6, 7, 8, 9],]));  */
+
+
+/// 4
+
+
+/* const numbers = [1, 2, 3, 3, 4, 5, 5, 6];
+
+const removeDuplicates = (numbers) => numbers.reduce((acc, cur) => {
+  if (!acc.includes(cur) ) {
+    acc.push(cur)
+  }
+  return acc
+}, [] )
+
+console.log(removeDuplicates(numbers));  */
+
+
+//// 5
 
 
 
