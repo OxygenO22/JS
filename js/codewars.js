@@ -182,3 +182,104 @@ One last thing: x and y are integers (no decimals). */
 
 console.log(sumAndMultiply(57, 80))
 console.log(sumAndMultiply(570, 839)) */
+
+
+//// 7 
+
+/* Complete the function/method so that it returns the url with anything after the anchor (#) removed.
+
+Examples
+"www.codewars.com#about" --> "www.codewars.com"
+"www.codewars.com?page=1" -->"www.codewars.com?page=1" */
+
+/* const removeUrlAnchor = (url) => {
+	if (typeof url === 'string') {
+		if (url.includes("#")) {
+			return url.split('#')[0];
+		} else {
+			return url;
+		}
+	} else {
+		alert('Should be string');
+	}
+}
+
+console.log(removeUrlAnchor('www.codewars.com#about'))
+console.log(removeUrlAnchor('www.codewars.com/katas/')) */
+
+
+//// 8
+
+/* Trolls are attacking your comment section!
+
+A common way to deal with this situation is to remove all of the vowels from the trolls' comments, neutralizing the threat.
+
+Your task is to write a function that takes a string and return a new string with all vowels removed.
+
+For example, the string "This website is for losers LOL!" would become "Ths wbst s fr lsrs LL!".
+
+Note: for this kata y isn't considered a vowel. */
+
+/* const disemvowel = (str) => str.replace(/[aeiou]/gi, '');
+
+console.log(disemvowel("This website is for losers LOL!"))
+console.log(disemvowel("What are you, a communist?")) */
+
+
+//// 9
+
+/* Your task is to split the chocolate bar of given dimension n x m into small squares. Each square is of size 1x1 and unbreakable. Implement a function that will return minimum number of breaks needed.
+
+For example if you are given a chocolate bar of size 2 x 1 you can split it to single squares in just one break, but for size 3 x 1 you must do two breaks.
+
+If input data is invalid you should return 0 (as in no breaks are needed if we do not have any chocolate to split). Input will always be a non-negative integer. */
+
+/* const checkExam = (array1, array2) => {
+	let sum = 0;
+
+	for ( i = 0, j = 0; i < array1.length, j < array2.length; i++, j++) {
+		if (array1[j] === array2[i]) {
+			sum += 4;
+		} else if (array1[j] !== array2[i]) {
+			if (array2[j] === '') {
+			sum += 0;
+		} else {
+			sum -= 1;
+		}
+		}  
+	}
+
+	if (sum < 0) {
+		sum = 0;
+	} else {
+		sum;
+	}
+
+	return sum;
+} */
+
+// or 
+/* const checkExam = (array1, array2) => {
+  const reducer = (a, e, idx) => {
+    if (e === "") {
+      return a;  
+    }
+    
+    if (e === array1[idx]) {
+      return a += 4;
+    }
+    
+    return --a;
+  }
+  const score = array2.reduce(reducer, 0);
+  return score < 0 ? 0 : score;
+} */
+
+	// or 
+
+	/*const checkExam = (x, y) => (x = y.reduce((s, e, i) => s + (e === x[i] ? 4 : e === '' ? 0 : -1), 0)) > 0 ? x : 0; */
+
+/* console.log(checkExam(["a", "a", "b", "b"], ["a", "c", "b", "d"]))
+console.log(checkExam(["a", "a", "c", "b"], ["a", "a", "b",  ""]))
+console.log(checkExam(["a", "a", "b", "c"], ["a", "a", "b", "c"]))
+console.log(checkExam(["b", "c", "b", "a"], ["",  "a", "a", "c"])) */

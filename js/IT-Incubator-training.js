@@ -443,9 +443,39 @@ console.log(removeDuplicates(numbers));  */
 
 //// 5
 
+/* let todolistID1 = 1;
+  let todolistID2 = 2;
+
+let tasks = {
+    [todolistID1]: [
+      { id: 1, title: "HTML&CSS", isDone: true },
+      { id: 2, title: "JS", isDone: true },
+      { id: 3, title: "ReactJS", isDone: false },
+      { id: 4, title: "Rest API", isDone: false },
+      { id: 5, title: "GraphQL", isDone: false },
+    ],
+    [todolistID2]: [
+      { id: 1, title: "HTML&CSS2", isDone: true },
+      { id: 2, title: "JS2", isDone: true },
+      { id: 3, title: "ReactJS2", isDone: false },
+      { id: 4, title: "Rest API2", isDone: false },
+      { id: 5, title: "GraphQL2", isDone: false },
+    ],
+  } */
 
 
+//// 6
 
+/* const user = {
+  name: 'Alex',
+  age: 35
+}
+
+const increaseAge = (user) => {
+  user.age++;
+} */
+
+  
 
 
 
