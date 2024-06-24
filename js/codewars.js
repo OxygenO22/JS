@@ -283,3 +283,94 @@ If input data is invalid you should return 0 (as in no breaks are needed if we d
 console.log(checkExam(["a", "a", "c", "b"], ["a", "a", "b",  ""]))
 console.log(checkExam(["a", "a", "b", "c"], ["a", "a", "b", "c"]))
 console.log(checkExam(["b", "c", "b", "a"], ["",  "a", "a", "c"])) */
+
+
+//// 10 
+
+/* SMS messages are limited to 160 characters. It tends to be irritating, especially when freshly written message is 164 characters long.
+
+Your task is to shorten the message to 160 characters, starting from end, by replacing spaces with camelCase, as much as necessary.
+
+If all the spaces are replaced but the resulting message is still longer than 160 characters, just return that resulting message.
+
+Example 1:
+
+Original message (169 chars):
+
+No one expects the Spanish Inquisition! Our chief weapon is surprise, fear and surprise; two chief weapons, fear, surprise, and ruthless efficiency! And that will be it.
+Shortened message (160 chars):
+
+No one expects the Spanish Inquisition! Our chief weapon is surprise, fear and surprise; two chief weapons, fear,Surprise,AndRuthlessEfficiency!AndThatWillBeIt.
+Example 2:
+
+Original message (269 chars):
+
+SMS messages are limited to 160 characters. It tends to be irritating, especially when freshly written message is 164 characters long. SMS messages are limited to 160 characters. It tends to be irritating, especially when freshly written message is 164 characters long.
+Shortened message (228 chars):
+
+SMSMessagesAreLimitedTo160Characters.ItTendsToBeIrritating,EspeciallyWhenFreshlyWrittenMessageIs164CharactersLong.SMSMessagesAreLimitedTo160Characters.ItTendsToBeIrritating,EspeciallyWhenFreshlyWrittenMessageIs164CharactersLong. */
+
+/* let tc1 = 'No one expects the Spanish Inquisition! Our chief weapon is surprise, fear and surprise; two chief weapons, fear, surprise, and ruthless efficiency! And that will be it.'
+let tc1x = 'No one expects the Spanish Inquisition! Our chief weapon is surprise, fear and surprise; two chief weapons, fear,Surprise,AndRuthlessEfficiency!AndThatWillBeIt.'
+let tc2 = "This message is already short enough!"
+let tc3 = "ThereIsNoSpoonThereIsNoSpoonThereIsNoSpoonThereIsNoSpoonThereIsNoSpoonThereIsNoSpoonThereIsNoSpoonThereIsNoSpoonThereIsNoSpoonThereIsNoSpoonThereIsNoSpoonThereIsNoSpoonThereIsNoSpoon"
+let tc4 = "SMS messages are limited to 160 characters. It tends to be irritating, especially when freshly written message is 164 characters long. SMS messages are limited to 160 characters. It tends to be irritating, especially when freshly written message is 164 characters long."
+let tc4x = 'SMSMessagesAreLimitedTo160Characters.ItTendsToBeIrritating,EspeciallyWhenFreshlyWrittenMessageIs164CharactersLong.SMSMessagesAreLimitedTo160Characters.ItTendsToBeIrritating,EspeciallyWhenFreshlyWrittenMessageIs164CharactersLong.' */
+
+/* const shortener = (message) => {
+	const maxLength = 160;
+	let resArr = [];
+	if (message.length <= maxLength) {
+		return message;
+	} else if (message.length > maxLength ) {
+
+		const messageArr = message.split('').reverse();
+		let counter = messageArr.length;
+
+		for (let i = 0; i < messageArr.length; i++) {
+			if ( counter > maxLength) {
+				if (messageArr[i + 1] === ' ') {
+					resArr.push(messageArr[i].toUpperCase());
+					messageArr[i + 1] = '';
+					counter -= 1;
+				} else {
+					resArr.push(messageArr[i]);
+				}
+			} else {
+				resArr.push(messageArr[i]);
+			}			
+		}
+		if (resArr.length <= maxLength) {
+			return resArr.join('');
+		} else {
+			return resArr.reverse().join('');
+		}
+	}
+} */
+
+// or 
+
+/* function shortener(m){
+  while(m.length > 160 && (n = m.lastIndexOf(' ')) >= 0)
+  m = m.slice(0, n) + m[n+1].toUpperCase() + m.slice(n+2);
+  return m;
+} */
+
+// or
+
+/* const shortener = message =>  {
+  while (message.length > 160) {
+      let idx = message.lastIndexOf(' ');
+      if (idx == -1) break;
+      let part1 = message.slice(0, idx);
+      let part2  = message.slice(idx + 1);
+      message = part1 + part2[0].toUpperCase() + part2.slice(1);
+  }
+    return message;
+} 
+
+
+console.log(shortener(tc1))
+console.log(shortener(tc2)) 
+console.log(shortener(tc3))
+console.log(shortener(tc4))*/
