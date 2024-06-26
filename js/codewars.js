@@ -374,3 +374,116 @@ console.log(shortener(tc1))
 console.log(shortener(tc2)) 
 console.log(shortener(tc3))
 console.log(shortener(tc4))*/
+
+
+//// 11
+
+/* Welcome.
+
+In this kata you are required to, given a string, replace every letter with its position in the alphabet.
+
+If anything in the text isn't a letter, ignore it and don't return it.
+
+"a" = 1, "b" = 2, etc.
+
+Example
+Input = "The sunset sets at twelve o' clock."
+Output = "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11" */
+
+/* const alphabetPosition = (text) => {
+	const stringToArr = text.toLowerCase().split('');
+	const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+	let resultArr = [];
+
+	for (let i = 0; i < stringToArr.length; i++) {
+  for (let j = 0; j < alphabet.length; j++) {
+    if (stringToArr[i] === alphabet[j]) {
+      resultArr.push(j + 1)
+    }
+  }
+}
+  return resultArr.join(' ');
+} */
+
+// or
+
+/* function alphabetPosition(text) {
+  const letters = 'abcdefghijklmnopqrstuvwxyz';
+  return text.toLowerCase()
+             .split('')
+             .filter(t => letters.indexOf(t) > -1)
+             .map(t => letters.indexOf(t)+1 || '')
+             .join(' ');
+}
+
+console.log(alphabetPosition("The sunset sets at twelve o' clock.")); */
+
+
+/// 12
+
+/* Story
+Ben has a very simple idea to make some profit: he buys something and sells it again. Of course, this wouldn't give him any profit at all if he was simply to buy and sell it at the same price. Instead, he's going to buy it for the lowest possible price and sell it at the highest.
+
+Task
+Write a function that returns both the minimum and maximum number of the given list/array.
+
+Examples (Input --> Output)
+[1,2,3,4,5] --> [1,5]
+[2334454,5] --> [5,2334454]
+[1]         --> [1,1]
+Remarks
+All arrays or lists will always have at least one element, so you don't need to check the length. Also, your function will always get an array or a list, you don't have to check for null, undefined or similar. */
+
+/* const minMax = (arr) => arr.sort((a,b) => a - b).slice(0, 1).concat(arr.sort((a,b) => a - b).slice(-1));
+
+//or 
+
+const minMax1 = (arr) => [Math.min(...arr), Math.max(...arr)];
+
+console.log(minMax([1])); */
+
+
+//// 13
+
+/* The marketing team is spending way too much time typing in hashtags.
+Let's help them with our own Hashtag Generator!
+
+Here's the deal:
+
+It must start with a hashtag (#).
+All words must have their first letter capitalized.
+If the final result is longer than 140 chars it must return false.
+If the input or the result is an empty string it must return false.
+Examples
+" Hello there thanks for trying my Kata"  =>  "#HelloThereThanksForTryingMyKata"
+"    Hello     World   "                  =>  "#HelloWorld"
+""                                        =>  false */
+
+/* const generateHashtag = (str) => { 
+	let result = '';
+	if (str.trim().length !== 0) {
+		result = '#' + str.replace(/\s+/g, ' ').trim().split('').filter(i => i !== '#').join('').split('').filter(i => i !== '#').join('').split(' ').map(items =>  items.at(0).toUpperCase() + items.slice(1)).join('');
+		if (result.length <= 140) {
+			return result;
+		} else {
+			return false;
+		}
+	}
+   return false;
+} */
+
+// or 
+
+/* const generateHashtag = (str) => {
+
+  let hashtag = str.split(' ').reduce((tag, word) => tag + word.charAt(0).toUpperCase() + word.substring(1), '#');
+  
+  return hashtag.length == 1 || hashtag.length > 140 ? false : hashtag;
+} */
+
+/* console.log(generateHashtag("#DoWehaveAHashtag"));
+console.log(generateHashtag("Do We have A Hashtag"));
+console.log(generateHashtag("    Hello     World   "));
+console.log(generateHashtag(""));
+console.log(generateHashtag(" ".repeat(200)));
+console.log(generateHashtag("  ")); */
