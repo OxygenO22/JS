@@ -497,3 +497,40 @@ moveZeros([false,1,0,1,2,0,1,3,"a"]) // returns[false,1,1,2,1,3,"a",0,0] */
 
 /* const moveZeros = (arr) => arr.filter(i => i !== 0).concat(arr.filter(i => i === 0));
 console.log(moveZeros([1,2,0,1,0,1,0,3,0,1])); */
+
+
+/// 15 
+
+/* Write Number in Expanded Form
+You will be given a number and you will need to return it as a string in Expanded Form. For example:
+
+expandedForm(12); // Should return '10 + 2'
+expandedForm(42); // Should return '40 + 2'
+expandedForm(70304); // Should return '70000 + 300 + 4'
+NOTE: All numbers will be whole numbers greater than 0. */
+
+/* const expandedForm = (num) => {
+  const numToArr = num.toString().split('')
+	let resArr = [];
+
+	for (let i = 0; i < numToArr.length; i++) {
+		if (numToArr[i] !== '0') {
+			resArr.push(numToArr[i] + '0'.repeat(numToArr.length - 1 - i))
+		}
+	}
+
+	return resArr.join(' + ')
+} */
+
+// or 
+
+/* const expandedForm = (num) => {
+  return String(num)
+          .split("")
+          .map((num, index, arr) => num + "0".repeat(arr.length - index -1 ))
+          .filter((num) => Number(num) != 0)
+          .join(" + ")
+}
+
+console.log(expandedForm(12));
+console.log(expandedForm(70304)); */
