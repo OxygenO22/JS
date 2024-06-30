@@ -534,3 +534,66 @@ NOTE: All numbers will be whole numbers greater than 0. */
 
 console.log(expandedForm(12));
 console.log(expandedForm(70304)); */
+
+
+/// 16 
+
+/* I will give you an integer. Give me back a shape that is as long and wide as the integer. The integer will be a whole number between 1 and 50.
+
+Example
+n = 3, so I expect a 3x3 square back just like below as a string:
+
++++
++++
++++ */
+
+/* const generateShape = (integer) => {
+	let resArr = []
+	
+	for (let i = 0; i < integer; i++) {
+		resArr.push('+'.repeat(integer))
+	}
+	return resArr.join('\n')
+} */
+
+// or
+
+/* function generateShape(n){
+  return ("+".repeat(n)+"\n").repeat(n).trim()
+} */
+
+/* console.log(generateShape(8)); */
+
+/// 17
+
+/* Many people choose to obfuscate their email address when displaying it on the Web. One common way of doing this is by substituting the @ and . characters for their literal equivalents in brackets.
+
+Example 1:
+
+user_name@example.com
+=> user_name [at] example [dot] com
+Example 2:
+
+af5134@borchmore.edu
+=> af5134 [at] borchmore [dot] edu
+Example 3:
+
+jim.kuback@ennerman-hatano.com
+=> jim [dot] kuback [at] ennerman-hatano [dot] com
+Using the examples above as a guide, write a function that takes an email address string and returns the obfuscated version as a string that replaces the characters @ and . with [at] and [dot], respectively.
+
+Notes
+
+Input (email) will always be a string object. Your function should return a string.
+Change only the @ and . characters.
+Email addresses may contain more than one . character.
+Note the additional whitespace around the bracketed literals in the examples! */
+
+/* const obfuscate = (email) => email.split('').map(el => el === "@" ? el = ' [at] ' : el === '.' ? el = ' [dot] ' : el).join(''); */
+
+// or
+
+/* const obfuscate = email => email.replace(/@/gi, " [at] ").replace(/\./gi, " [dot] "); */
+
+/* console.log(obfuscate('test@123.com'));
+console.log(obfuscate('Code_warrior@foo.ac.uk')); */
