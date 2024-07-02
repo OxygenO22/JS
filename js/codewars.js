@@ -655,5 +655,6 @@ For instance, for the list [3, 4, 3, 6] , the function should return 10 and for 
 	
 }
 
-console.log(sumNoDuplicates([1, 1, 2, 3]));
-console.log(sumNoDuplicates([1, 1, 2, 2, 3])); */
+console.log(sumNoDuplicates([1, 1, 2, 3]));//5
+console.log(sumNoDuplicates([1, 1, 2, 2, 3]));//3
+console.log(sumNoDuplicates([5, 6, 10, 3, 10, 10, 6, 7, 0, 9, 1, 1, 6, 3, 1]));//21 */

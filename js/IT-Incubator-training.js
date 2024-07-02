@@ -475,8 +475,210 @@ const increaseAge = (user) => {
   user.age++;
 } */
 
+
+
+/////////////////////////// Sprint 1 Lesson 4
+
   
 
+//// 1
+
+
+/* const country_proprty = 'country';
+const property = 'new_';
+	
+const person = {
+ name: 'Kirill',
+ age: 24,
+ address: {
+   [country_proprty]: 'Poland',
+   [property + 'city']: 'Warsaw',
+ },
+};
+
+const personEqual = person;
+const personSpread = {...person};
+const personClone = structuredClone(person);
+
+console.log(personSpread === person);
+console.log(personEqual === person);
+
+person.address[country_proprty] = 'Belarus';
+
+console.log(personSpread.address[country_proprty]);
+console.log(personClone.address[country_proprty]);
+
+
+const superUser = {
+  id: 10,
+  name: 'Clementina DuBuque',
+  username: 'Moriah.Stanton',
+  email: 'Rey.Padberg@karina.biz',
+    address: {
+      street: 'Kattie Turnpike',
+      suite: 'Suite 198',
+      city: 'Lebsackbury',
+      zipcode: '31428-2261',
+    geo: {
+      lat: '-38.2386',
+      lng: '57.2232',
+    },
+  },
+  phone: '024-648-3804',
+  website: 'ambrose.net',
+  company: {
+    name: 'Hoeger LLC',
+    catchPhrase: 'Centralized empowering task-force',
+    bs: 'target end-to-end models',
+  },
+};
+
+console.log(Object.keys(superUser));
+console.log(Object.values(superUser));
+
+const {address: {street, suite}} = superUser;
+
+console.log(street);
+console.log(suite); */
+
+/*const student = {
+  name: "Eva",
+};
+const newStudent = student;
+const myFriend = {
+  ...newStudent,
+};
+const newUser = {
+  name: "Vladislav",
+};
+const myFriendName =
+  student.name !== myFriend.name ? newUser.name : student.name;
+
+
+   function Colorize() {
+  const [color, setColor] = useState<string>("black");
+  const colors = ["red", "yellow", "green", "blue", "violet", "chartreuse"];
+  const styles = {
+    width: "100px",
+    height: "100px",
+    borderRadius: "50%",
+    backgroundColor: "black",
+  };
+  const getColor = (colors: string[]) => {
+    const nextColor = colors[Math.floor(Math.random() * colors.length)];
+    return nextColor;
+  };
+  return (
+    <main>
+      <div style={{ ...styles, backgroundColor: color }} />
+      <div>
+        <button onClick={() => setColor(getColor(colors))}>
+          Get random color
+        </button>
+      </div>
+    </main>
+  );
+} */
+
+  /* const user = {
+    name: "Masha",
+    age: 83,
+    friends: ["Elizaveta", "Elena", "Liza"],
+  };
+  const updatedUser = {
+    ...user,
+    friends: user.friends,
+  };
+  console.log(user.friends === updatedUser.friends); */
+
+  /* const user = {
+    name: "Rita",
+    age: 51,
+    friends: ["Egor", "Vladislav", "Elizaveta"],
+  };
+  const newFriend = "Masha";
+  const friends = [...user.friends, newFriend];
+
+  const updatedUser = { ...user, friends: friends };
+
+  console.log(updatedUser); */
+
+
+
+
+  /* type StudentType = {
+    id: number;
+    name: string;
+  };
+  type FriendsType = {
+    [key: string]: Array<string>;
+  };
+   const students: Array<StudentType> = [
+    { id: 1, name: "Bob" },
+    { id: 2, name: "Alex" },
+    { id: 3, name: "Ann" },
+    { id: 4, name: "Charley" },
+  ];
+  const friends: FriendsType = {
+    1: ["Oliver", "Jack", "Oscar"],
+    2: ["Jack", "Lewis", "Thomas"],
+    3: ["William", "Michael", "Lewis"],
+    4: ["Oscar", "James", "William"],
+  };
+
+  console.log(friends[3][1]);
+  console.log(friends[students[1].id][2]); */
+
+
+
+  /* const member = {
+    name: "Maxim",
+    age: 34,
+    scores: [47.04, 98.84, 3.52],
+  };
+  const { name, age, scores } = member;
+  console.log(member.scores === scores && age); */
+
+
+
+  /* const student = {
+    name: "Maria",
+    age: 23,
+    scores: [10.55, 35.86, 33.33]
+}
+const [first, second, third = 29.15] = student.scores
+switch(third){
+    case 29.15:
+        console.log("Kuwait")
+        break;
+   case 35.86:
+        console.log("Zimbabwe")
+        break;
+   default:
+        console.log("Azerbaijan");
+  }  */
+
+
+
+
+        /* const client = {
+    name: "Vladimir",
+    age: 59,
+    friends: ["Michail", "Mia", "Egor", "Leonid"]
+}
+const [affair, attempt, chance] = client.friends
+const result = attempt */
+
+
+
+/* const userName = (user = "") => {
+    let userName: any = "Margo";
+    userName += user;
+    return user;
+  };
+  const student = userName() || "Victor";
+
+  console.log(student); */
 
 
 
