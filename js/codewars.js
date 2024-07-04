@@ -652,9 +652,23 @@ console.log(topThreeWords("e e e e DDD ddd DdD: ddd ddd aa aA Aa, bb cc cC e e e
 For instance, for the list [3, 4, 3, 6] , the function should return 10 and for the list [1, 10, 3, 10, 10] , the function should return 4. */
 
 /* const sumNoDuplicates = (numList) => {
-	
-}
+
+	const unicRepNums = [...new Set(numList.filter((e, i, a) => a.indexOf(e) !== i))];
+	const unicNums = [...new Set(numList)];
+	const resArr = unicNums.filter(i=>!unicRepNums.includes(i))
+    .concat(unicRepNums.filter(i=>!unicNums.includes(i)));
+
+	return resArr.reduce((acc, cur) => acc + cur, 0);
+} */
+
+// or
+
+/* const sumNoDuplicates = (numList) => numList.filter((i)=> numList.indexOf(i) == numList.lastIndexOf(i)).reduce((a,b)=> a + b, 0); */
+
+//or
+
+/* const sumNoDuplicates = (numList) => numList.reduce((a,b)=>numList.indexOf(b)===numList.lastIndexOf(b) ? a+b : a,0); */
 
 console.log(sumNoDuplicates([1, 1, 2, 3]));//5
-console.log(sumNoDuplicates([1, 1, 2, 2, 3]));//3
-console.log(sumNoDuplicates([5, 6, 10, 3, 10, 10, 6, 7, 0, 9, 1, 1, 6, 3, 1]));//21 */
+console.log(sumNoDuplicates([1, 1, 1, 2, 2, 3]));//3
+console.log(sumNoDuplicates([5, 6, 10, 3, 10, 10, 6, 7, 0, 9, 1, 1, 6, 3, 1]));//21
