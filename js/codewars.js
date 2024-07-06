@@ -669,6 +669,84 @@ For instance, for the list [3, 4, 3, 6] , the function should return 10 and for 
 
 /* const sumNoDuplicates = (numList) => numList.reduce((a,b)=>numList.indexOf(b)===numList.lastIndexOf(b) ? a+b : a,0); */
 
-console.log(sumNoDuplicates([1, 1, 2, 3]));//5
+/* console.log(sumNoDuplicates([1, 1, 2, 3]));//5
 console.log(sumNoDuplicates([1, 1, 1, 2, 2, 3]));//3
-console.log(sumNoDuplicates([5, 6, 10, 3, 10, 10, 6, 7, 0, 9, 1, 1, 6, 3, 1]));//21
+console.log(sumNoDuplicates([5, 6, 10, 3, 10, 10, 6, 7, 0, 9, 1, 1, 6, 3, 1]));//21 */
+
+
+
+//// 20! 
+
+/* In this kata, your task is to create all permutations of a non-empty input string and remove duplicates, if present.
+
+Create as many "shufflings" as you can!
+
+Examples:
+
+With input 'a':
+Your function should return: ['a']
+
+With input 'ab':
+Your function should return ['ab', 'ba']
+
+With input 'abc':
+Your function should return ['abc','acb','bac','bca','cab','cba']
+
+With input 'aabb':
+Your function should return ['aabb', 'abab', 'abba', 'baab', 'baba', 'bbaa']
+Note: The order of the permutations doesn't matter.
+
+Good luck! */
+
+/* const permutations = (string) => {
+	
+	const strToArr  = string.split('');
+
+	const res = []
+
+	for (let i = 0; i < strToArr.length; i++) {
+
+	}
+
+
+	return strToArr;
+}
+
+console.log(permutations('abcd')); */
+
+
+
+
+//// 21!
+
+/* The maximum sum subarray problem consists in finding the maximum sum of a contiguous subsequence in an array or list of integers:
+maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4])
+// should be 6: [4, -1, 2, 1]
+Easy case is when the list is made up of only positive numbers and the maximum sum is the sum of the whole array. If the list is made up of only negative numbers, return 0 instead.
+Empty list is considered to have zero greatest sum. Note that the empty list or array is also a valid sublist/subarray. */
+
+/* const maxSequence = (arr) => {
+	
+}
+
+console.log(maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4])); */
+
+
+/// 22 
+
+/* Given 2 strings, a and b, return a string of the form short+long+short, with the shorter string on the outside and the longer string on the inside. The strings will not be the same length, but they may be empty ( zero length ).
+
+Hint for R users:
+
+The length of string is not always the same as the number of characters
+For example: (Input1, Input2) --> output
+
+("1", "22") --> "1221"
+("22", "1") --> "1221"
+ShortLongShort.solution("1", "22"); // returns "1221"
+ShortLongShort.solution("22", "1"); // returns "1221" */
+
+/* const solution = (a, b) => a.length > b.length ? b + a + b : a + b + a;
+
+console.log(solution('Soon', 'Me'));
+console.log(solution('45', '1')); */
