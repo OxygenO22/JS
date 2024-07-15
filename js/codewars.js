@@ -782,3 +782,54 @@ Examples
 
 /* console.log(solution([1,2,3],[4,5,6]));
 console.log(solution([10,20,10,2],[10,25,5,-2])); */
+
+
+/// 24
+
+/* Write a function that when given a URL as a string, parses out just the domain name and returns it as a string. For example:
+
+* url = "http://github.com/carbonfive/raygun" -> domain name = "github"
+* url = "http://www.zombie-bites.com"         -> domain name = "zombie-bites"
+* url = "https://www.cnet.com"                -> domain name = cnet" */
+
+
+/* const domainName = (url) => {
+	const strToArr = url.split('http://').join('').split('https://').join('').split('www').join('')
+	const res = []; 
+	
+	if (strToArr.indexOf('.') === 0) {
+		const resArr = strToArr.slice(1).split('');
+		for (let i = 0; i < resArr.length; i++) {
+			if (resArr[i] !== '.') {
+				res.push(resArr[i])
+			} else {
+				break
+			}
+		}
+	} else {
+		const resArr = strToArr.split('');
+		for (let i = 0; i < resArr.length; i++) {
+			if (resArr[i] !== '.') {
+				res.push(resArr[i])
+			} else {
+				break
+			}
+		}
+	}
+	return res.join('')
+} */
+
+/// or
+
+/* function domainName(url){
+	return  url.replace('http://', '')
+					   .replace('https://', '')
+					   .replace('www.', '')
+  					 .split('.')[0];
+}
+}; */
+
+/* console.log(domainName("http://google.com"));
+console.log(domainName("http://google.co.jp"));
+console.log(domainName("www.xakep.ru"));
+console.log(domainName("https://youtube.com")); */
