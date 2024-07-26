@@ -1074,8 +1074,8 @@ console.log([...uniqueNum]) */
 // globalLE {j: 1}
 
 // let j = 1;
-for (var j = 1; j < 50; j++) {
+/* for (var j = 1; j < 50; j++) {
   // {j: 1}
   // {j: 2}
   setTimeout(() => console.log(j), 1000);
-}
+} */

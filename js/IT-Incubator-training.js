@@ -681,17 +681,66 @@ const result = attempt */
   console.log(student); */
 
 
+  //// MUTABELNOST
 
 
 
+/////////////////////////////////////////// Lesson 5 sprint 3 //////////////////////////
+
+/// 1
+
+/* function f() {
+  let value = Math.random();
+
+  return function() { alert(value); };
+}
+
+// 3 функции в массиве, каждая из которых ссылается на лексическое окружение
+// из соответствующего вызова f()
+let arr = [f(), f(), f()];
+const [a, b, c] = arr;
+a(); */
+
+/* for (let i = 0; i < arr.length; i++) {
+  arr[i]();
+} */
 
 
+  /// 2
+
+  /* let value = "Сюрприз!";
+
+function f() {
+  let value = "ближайшее значение";
+
+  function g() {
+    debugger; // в консоли: напишите alert(value); Сюрприз!
+  }
+
+  return g;
+}
+
+let g = f();
+g();
+
+console.log(alert(value)); */
 
 
+///3 
+/* 
+//globalLE {} -> null
 
+let name = "John"; //globalLE {name: 'John', sayHi: func } -> null
 
+function sayHi() {
+  //sayHiLE{} -> globalLE {name: 'John', sayHi: func } -> null
+  alert("Hi, " + name);
+}
 
+name = "Pete"; //globalLE {name: 'Pete', sayHi: func } -> null
+sayHi(); // что будет показано: "John" или "Pete"?
 
+ */
 
 
 
