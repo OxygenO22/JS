@@ -1119,49 +1119,49 @@ console.log([...uniqueNum]) */
 // 	callback()
 // }
 
-// fetchCallback("https://booksstore.com/authors", (err, data) => {
-//   if (err) {
-//     console.log(err);
-//   } else {
-//     fetchCallback(
-//       `https://booksstore.com/authors/${data.authorId}`,
-//       (err, data) => {
-//         if (err) {
-//           console.log(err);
-//         } else {
-//           fetchCallback(
-//             `https://booksstore.com/authors/authorId/${data.books}`,
-//             (err, data) => {
-//               if (err) {
-//                 console.log(err);
-//               } else {
-//                 fetchCallback(
-//                   `https://booksstore.com/authors/authorId/books/${data.bookId}`,
-//                   (err, data) => {
-//                     if (err) {
-//                       console.log(err);
-//                     } else {
-//                       fetchCallback(
-//                         `https://booksstore.com/authors/authorId/books/bookId/${data.page}`,
-//                         (err, data) => {
-//                           if (err) {
-//                             console.log(err);
-//                           } else {
-//                             console.log(data);
-//                           }
-//                         }
-//                       );
-//                     }
-//                   }
-//                 );
-//               }
-//             }
-//           );
-//         }
-//       }
-//     );
-//   }
-// });
+/* fetchCallback("https://booksstore.com/authors", (err, data) => {
+  if (err) {
+    console.log(err);
+  } else {
+    fetchCallback(
+      `https://booksstore.com/authors/${data.authorId}`,
+      (err, data) => {
+        if (err) {
+          console.log(err);
+        } else {
+          fetchCallback(
+            `https://booksstore.com/authors/authorId/${data.books}`,
+            (err, data) => {
+              if (err) {
+                console.log(err);
+              } else {
+                fetchCallback(
+                  `https://booksstore.com/authors/authorId/books/${data.bookId}`,
+                  (err, data) => {
+                    if (err) {
+                      console.log(err);
+                    } else {
+                      fetchCallback(
+                        `https://booksstore.com/authors/authorId/books/bookId/${data.page}`,
+                        (err, data) => {
+                          if (err) {
+                            console.log(err);
+                          } else {
+                            console.log(data);
+                          }
+                        }
+                      );
+                    }
+                  }
+                );
+              }
+            }
+          );
+        }
+      }
+    );
+  }
+}); */
 
 // fetchPromise("https://booksstore.com/authors")
 // 	.then((data) => {
@@ -1174,28 +1174,59 @@ console.log([...uniqueNum]) */
 // 		})
 // 	})
 
-// fetchPromise("https://booksstore.com/authors")
-//   .then((data) => {
-//     return fetchPromise(`https://booksstore.com/authors/${data.authorId}`);
-//   })
-//   .then((data) => {
-//     return fetchPromise(
-//       `https://booksstore.com/authors/authorId/${data.books}`
-//     );
-//   })
-//   .then((data) => {
-//     return fetchPromise(
-//       `https://booksstore.com/authors/authorId/books/${data.bookId}`
-//     );
-//   })
-//   .then((data) => {
-//     return fetchPromise(
-//       `https://booksstore.com/authors/authorId/books/bookId/${data.page}`
-//     );
-//   })
-//   .catch((err) => {
-//     console.log(err);
-//   });
+/* fetchPromise("https://booksstore.com/authors")
+  .then((data) => {
+    return fetchPromise(`https://booksstore.com/authors/${data.authorId}`);
+  })
+  .then((data) => {
+    return fetchPromise(
+      `https://booksstore.com/authors/authorId/${data.books}`
+    );
+  })
+  .then((data) => {
+    return fetchPromise(
+      `https://booksstore.com/authors/authorId/books/${data.bookId}`
+    );
+  })
+  .then((data) => {
+    return fetchPromise(
+      `https://booksstore.com/authors/authorId/books/bookId/${data.page}`
+    );
+  })
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((err) => {
+    console.log(err);
+  }); */
+
+/* const fetchAsync = async () => {
+  try {
+    const dataFrom1request = await fetchPromise(
+      "https://booksstore.com/authors"
+    );
+    const dataFrom2request = await fetchPromise(
+      `https://booksstore.com/authors/${dataFrom1request.authorId}`
+    );
+    const dataFrom3request = await fetchPromise(
+      `https://booksstore.com/authors/authorId/${dataFrom2request.books}`
+    );
+    const dataFrom4request = await fetchPromise(
+      `https://booksstore.com/authors/authorId/books/${dataFrom3request.bookId}`
+    );
+    const dataFrom5request = await fetchPromise(
+      `https://booksstore.com/authors/authorId/books/bookId/${dataFrom4request.page}`
+    );
+    console.log(dataFrom5request);
+		return [dataFrom1request, dataFrom2request ....]
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+fetchAsync().then((dataArrs) => {
+  console.log("then from async");
+}); */
 
 // promise
 
@@ -1316,19 +1347,240 @@ console.log([...uniqueNum]) */
 // Напишите функцию delay(ms), которая возвращает промис, переходящий в состояние "resolved" через ms миллисекунд.
 // Пример использования:
 
-/* function delay(ms) {
-  return new Promise((res, rej) => {
-    setTimeout(() => {
-      rej("reject1 ");
-    }, ms);
+// function delay(ms) {
+//   return new Promise((res, rej) => {
+//     setTimeout(() => {
+//       rej("reject1 ");
+//     }, ms);
+//   });
+// }
+
+// // delay(1000).then(() => console.log("Hello!"));
+
+// delay(1000)
+//   .catch((t) => t + "catch1 ")
+//   .catch((t) => t + "catch2 ")
+//   .then((t) => t + "then1 ")
+//   .finally((t) => t + "finally ")
+//   .then((t) => console.log(t));
+
+// const promiseFetch = (url) => {
+//   return new Promise((res, rej) => {
+//     fetch(url, (err, data) => {
+//       if (err) {
+//         rej(err);
+//       } else {
+//         res(data);
+//       }
+//     });
+//   });
+// };
+
+/* const promiseFetch = () => {
+  return new Promise((_, rej) => {
+    setTimeout(rej, 1000);
   });
-}
+};
 
-// delay(1000).then(() => console.log("Hello!"));
+promiseFetch("https://samuray.com/users").then((data) => {
+  console.log("resolve");
+}); */
+// .catch((err) => {
+//   console.log("reject", err);
+// });
 
-delay(1000)
-  .catch((t) => t + "catch1 ")
-  .catch((t) => t + "catch2 ")
-  .then((t) => t + "then1 ")
-  .finally((t) => t + "finally ")
-  .then((t) => console.log(t)); */
+
+
+
+
+
+  /////////////////////////////////////////// Lesson 7 sprint 3 //////////////////////////
+
+  // Promise, async/await, static methods
+
+
+  //import fetch from "node-fetch";
+
+// fetch("https://yahoo.com")
+//   .then((data) => {
+//     console.log("data from yahoo", data.url);
+
+//     return fetch("https://bing.com");
+//   })
+//   .then((data) => {
+//     console.log("data from bing", data.url);
+
+//     return fetch("https://google.com");
+//   })
+//   .then((data) => {
+//     console.log("data from google", data.url);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+// const asyncFetch = async () => {
+//   try {
+//     const yahooData = await fetch("https://yahoo4.com");
+//     console.log("data from yahoo", yahooData);
+
+//     const bingData = await fetch("https://bing.com");
+//     console.log("data from bing", bingData.url);
+
+//     const googleData = await fetch("https://google.com");
+//     console.log("data from google", googleData.url);
+//   } catch (err) {
+//     console.log("ERROR", err);
+//   }
+// };
+
+// asyncFetch();
+
+// ------------------------------
+
+// const generator = function* foo(){}
+
+// function* gerateSalaryWithBonus(salary) {
+//   console.log("before 1 yield");
+//   const num = yield salary + (salary / 100) * 15;
+//   console.log("before 2 yield", num);
+//   yield salary + (salary / 100) * 20;
+//   console.log("before 3 yield");
+//   yield salary + (salary / 100) * 25;
+//   console.log("before 4 yield");
+//   yield salary + (salary / 100) * 30;
+//   console.log("before 5 yield");
+//   return salary + (salary / 100) * 35;
+//   // return
+// }
+
+// const generator = gerateSalaryWithBonus(1000);
+
+// console.log(generator.next());
+
+// // console.log(gerateSalaryWithBonus(1000));
+
+// // ------------------------------
+
+// if (true) {
+//   console.log(generator.next(10));
+// }
+
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+
+// --------------------------------------
+
+// Определите функцию с именем asyncAlt, которая принимает функцию генератора
+//в качестве аргумента.
+
+// function newAsync(generatorFunction) {
+// 	// Возвращаем функцию
+// 	return function () {
+// 		// Создайте и назначьте объект-генератор
+// 		const generator = generatorFunction();
+
+// 		// Определите функцию, которая принимает следующую итерацию генератора.
+// 		function resolve(next) {
+// 			// Если генератор закрыт(завершен) и больше нет значений для вывода,
+// 			// резолвим последнее значение.
+// 			if (next.done) {
+// 				return Promise.resolve(next.value);
+// 			}
+
+// 			//Если еще есть значения, для следующих yield, то это промис
+// 			// и их необходимо резолвить.
+// 			return Promise.resolve(next.value).then((response) => {
+// 				return resolve(generator.next(response));
+// 			});
+// 		}
+
+// 		// Начинаем резолвить промис
+// 		return resolve(generator.next());
+// 	};
+//  }
+
+// const getUsers = newAsync(function*() {
+// 	const response = yield fetch("https://www.google.com/search?q=js")
+// 	console.log(response.url);
+//  })
+
+// getUsers()
+
+// ------------------------------
+
+// all, race, any, allSettled
+
+// ALL
+
+// const pr1 = fetch("https://yahoo.com");
+// const pr2 = fetch("https://bing4535.com");
+// const pr3 = fetch("https://google.com");
+
+// const bigPromise = Promise.all([pr1, pr2, pr3]);
+
+// bigPromise
+//   .then((bigData) => {
+//     console.log(bigData);
+//   })
+//   .catch((err) => {
+//     console.log(err.message);
+//   });
+
+// Promise.all([
+//   fetch("https://yahoo.com"),
+//   fetch("https://bing.com"),
+//   fetch("https://google.com"),
+// ])
+//   .then((bigData) => {
+//     console.log(bigData);
+//   })
+//   .catch((err) => {
+//     console.log(err.message);
+//   });
+
+// RACE
+
+// Promise.race([
+//   fetch("https://yahoo.com"),
+//   fetch("https://bing.com"),
+//   fetch("https://google.com"),
+// ])
+//   .then((data) => {
+//     console.log(data.url);
+//   })
+//   .catch((err) => {
+//     console.log(err.message);
+//   });
+
+// ANY
+
+// Promise.any([
+//   fetch("https://yahoo3453.com"),
+//   fetch("https://bing245354.com"),
+//   fetch("https://google4355.com"),
+// ])
+//   .then((data) => {
+//     console.log(data.url);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+// AllSETTLED
+
+/* Promise.allSettled([
+  fetch("https://yahoo645.com"),
+  fetch("https://bing3455.com"),
+  fetch("https://google5466.com"),
+]).then((data) => {
+  console.log(data);
+}); */
+
+
+
+  
+  
+
