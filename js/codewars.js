@@ -871,10 +871,18 @@ If a string contains all repeating characters, it should return an empty string 
 
 † Note: the function is called firstNonRepeatingLetter for historical reasons, but your function should handle any Unicode character. */
 
-function firstNonRepeatingLetter(s) {
-  // Add your code here
+const firstNonRepeatingLetter = (s) => {
+	const arrForCheck = s.split('')
+	const checkArr = s.split('')
+
+	for (let i = 0; i < arrForCheck.length; i++) {
+		s.indexOf(arrForCheck[i], i)
+	}
+
+	return res
+  
 }
 
-console.log(firstNonRepeatingLetter('a'));
+//console.log(firstNonRepeatingLetter('a'));
 console.log(firstNonRepeatingLetter('stress'));
-console.log(firstNonRepeatingLetter('moonmen'));
+//console.log(firstNonRepeatingLetter('moonmen'));
