@@ -1734,7 +1734,7 @@ promiseFetch("https://samuray.com/users").then((data) => {
 
 // ------------------------------
 
-async function first() {
+/* async function first() {
   console.log(9);
   await Promise.resolve(2).then((r) => console.log(r));
   console.log(0);
@@ -1752,10 +1752,38 @@ first();
 second();
 
 const promises = Promise.resolve("new Promise");
-promises.then((str) => console.log(str));
+promises.then((str) => console.log(str)); */
 
 
 
-  
+
+
+/////////////////////////////////////////// Lesson 1 sprint 4 //////////////////////////
+
+
+
+
+/* Урок 5. Событися в JavaScript. Паттерны проектированния (publisher/subscriber) */
+
+
+/* const smallDiv = document.getElementById('small')
+const mediumDiv = document.getElementById('medium')
+const bigDiv = document.getElementById('big')
+const link = document.getElementById('linkId')
+
+function handler1(e) {
+  e.stopPropagation()
+  console.log(e.target)
+}
+
+const blockDefaultBehavior = e => {
+  e.preventDefault()
+}
+
+smallDiv.addEventListener('click', handler1)
+mediumDiv.addEventListener('click', handler1)
+bigDiv.addEventListener('click', handler1)
+link.addEventListener('click', blockDefaultBehavior) */
+
   
 
