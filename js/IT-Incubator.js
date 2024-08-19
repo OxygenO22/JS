@@ -1787,3 +1787,71 @@ link.addEventListener('click', blockDefaultBehavior) */
 
   
 
+/////////////////////////////////////////// Lesson 2 sprint 4 //////////////////////////
+
+// Контекст вызова, this, call/apply/bind, constructors
+
+//console.log(this)
+
+/* const car = {
+  color: 'red',
+  maxSpeed: 200,
+  showMaxSpeed() {
+    console.log(this.maxSpeed)
+  },
+}
+ 
+car.showMaxSpeed() */
+
+
+
+/* let car = {
+  color: 'red',
+  maxSpeed: 200,
+  showMaxSpeed() {
+    console.log(car.maxSpeed) // not working for newCar
+    console.log(this.maxSpeed) // working for newCar
+  },
+}
+ 
+const newCar = car
+car = null
+ 
+newCar.showMaxSpeed() */
+
+
+/* const bmw = {
+ brand: "bmw",
+ speed: 200,
+ showMaxSpeed() {
+   console.log(this.speed);
+ },
+};
+const scooter = {
+ speed: 60,
+};
+const kia = {
+ speed: 150,
+};
+bmw.showMaxSpeed.call(scooter);
+bmw.showMaxSpeed.apply(bmw);
+bmw.showMaxSpeed.apply(kia); */
+
+
+
+/* const scooter = {
+  maxSpeed: 60,
+}
+ 
+const bike = {
+  maxSpeed: 180,
+}
+ 
+const car1 = {
+  maxSpeed: 200,
+  showMaxSpped() {
+    console.log(this.maxSpeed)
+  },
+}
+ 
+car1.showMaxSpped.bind(scooter).apply(bike) */
