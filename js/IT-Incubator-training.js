@@ -742,6 +742,12 @@ sayHi(); // что будет показано: "John" или "Pete"?
 
  */
 
+let num = 18
+let obj = {age: 18}
+const API = function() {}
+
+console.log(API.prototype);
+
 
 
 

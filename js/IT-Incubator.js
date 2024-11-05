@@ -1758,7 +1758,7 @@ promises.then((str) => console.log(str)); */
 
 
 
-/////////////////////////////////////////// Lesson 1 sprint 4 //////////////////////////
+/////////////////////////////////////////// Lesson 1(8) sprint 4 //////////////////////////
 
 
 
@@ -1787,7 +1787,10 @@ link.addEventListener('click', blockDefaultBehavior) */
 
   
 
-/////////////////////////////////////////// Lesson 2 sprint 4 //////////////////////////
+/////////////////////////////////////////// Lesson 2(9) sprint 4 //////////////////////////
+
+
+
 
 // Контекст вызова, this, call/apply/bind, constructors
 
@@ -1855,3 +1858,23 @@ const car1 = {
 }
  
 car1.showMaxSpped.bind(scooter).apply(bike) */
+
+
+/* const dialer = {
+  name: 'Toyota',
+  models: ['Yaris', 'Corolla', 'Prado'],
+  showModelsInDialer() {
+    this.models.forEach(function (model) {
+      console.log(`Dialer: ${this.name}, have: ${model}`)
+    })
+  },
+}
+ 
+dialer.showModelsInDialer() */
+
+  
+
+/////////////////////////////////////////// Lesson 3(10) sprint 5 //////////////////////////
+
+
+

@@ -52,10 +52,10 @@ pr2.then(() => console.log('I\'ve done after 2 sec' )) */
 
  ///////////////////////
 
- const getRandomAfter = (sec) => {
+ /* const getRandomAfter = (sec) => {
   return new Promise((res) => {
     setTimeout(() => {
       res()
     }, sec * 1000)
   })
-}
+} */

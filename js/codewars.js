@@ -871,7 +871,7 @@ If a string contains all repeating characters, it should return an empty string 
 
 † Note: the function is called firstNonRepeatingLetter for historical reasons, but your function should handle any Unicode character. */
 
-const firstNonRepeatingLetter = (s) => {
+/* const firstNonRepeatingLetter = (s) => {
 	const arrForCheck = s.split('')
 	const checkArr = s.split('')
 
@@ -885,4 +885,27 @@ const firstNonRepeatingLetter = (s) => {
 
 //console.log(firstNonRepeatingLetter('a'));
 console.log(firstNonRepeatingLetter('stress'));
-//console.log(firstNonRepeatingLetter('moonmen'));
+//console.log(firstNonRepeatingLetter('moonmen')); */
+
+
+
+/// 27
+
+/* A rich man visits a jewelry shop and wants to buy as many gems as possible with his given budget. Each gem has a specific cost, and the rich man wants to maximize the number of gems he can purchase without exceeding his budget. */
+
+
+const maxGems = (costs, budget) => {
+	let gems = 0;
+	const filteredArr = costs.filter(el => el <= budget).sort((a, b) => a - b).reduce((sum, cur) => {
+		if (sum + cur <= budget) {
+      sum += cur;
+      gems++;
+    }
+    return sum;
+	}, 0)
+  return gems;
+}
+
+console.log(maxGems([100, 200, 150, 50, 300, 400, 500], 400));
+console.log(maxGems([500, 700, 300], 200));
+console.log(maxGems([100,  300, 400, 500], 400));
