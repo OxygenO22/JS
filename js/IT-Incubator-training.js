@@ -742,11 +742,38 @@ sayHi(); // что будет показано: "John" или "Pete"?
 
  */
 
-let num = 18
+/* let num = 18
 let obj = {age: 18}
 const API = function() {}
 
-console.log(API.prototype);
+console.log(API.prototype); */
+
+
+
+
+////// await
+
+/* const asyncFetch = async () => {
+
+  try {
+    const yahooData = await fetch('https://yahoo.com');
+  console.log('data from yahoo', yahooData.url); 
+
+  const bingData = await fetch('https://bing.com');
+  console.log('data from yahoo', bingData.url); 
+
+  const googleData = await fetch('https://google.com');
+  console.log('data from yahoo', googleData.url); 
+  }
+  catch (err) {
+    console.log('Error', err);
+  }
+
+  
+
+}
+
+asyncFetch(); */
 
 
 
