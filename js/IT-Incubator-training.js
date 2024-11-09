@@ -1,6 +1,11 @@
 /////////////////////////// Sprint 1 Lesson 1
 
 
+
+
+
+
+
 //// 1 
 
 
@@ -774,6 +779,91 @@ console.log(API.prototype); */
 }
 
 asyncFetch(); */
+
+
+/// function generator
+// function* genFoo(sal) {
+//   const num = yield 1 + sal;
+//   console.log(num);
+//   yield 2 + sal;
+//   return 3 + sal;
+// }
+
+// const generator = genFoo(10);
+
+// console.log(generator);
+
+// console.log(generator.next().value);
+// console.log(generator.next(20));
+// console.log(generator.next());
+
+
+
+// function greet() {
+//   console.log('Hello!')
+// }
+//  setTimeout(() => greet(), 5000)
+
+
+
+// const server = {
+//   getData() {
+//     return new Promise((res, rej) => {
+//       setTimeout(() => {
+//         res('server data')
+//       }, 2000)
+//     })
+//   },
+// }
+ 
+// const promise = server.getData()
+// console.log(promise)
+
+
+
+// const fs = require('fs')
+ 
+// const getData = url => {
+//   return new Promise((res, rej) => {
+//     fs.readFileSync(url, (err, data) => {
+//       if (err) {
+//         rej(err)
+//       } else {
+//         res(data)
+//       }
+//     })
+//   })
+// }
+ 
+// const pr = getData('./index.html')
+
+
+///// axios
+/* axios.post('https://jsonplaceholder.typicode.com/todos/1', {
+    completed: false,
+    id: 1,
+    title: "My",
+    userId: 1
+  }) */
+
+// axios.get('https://jsonplaceholder.typicode.com/posts?length=10')
+//       .then(res => console.log(res.data))
+
+// axios.put('https://jsonplaceholder.typicode.com/posts/1', {
+//   body:{
+//     id: 1,
+//     title: 'foo',
+//     body: 'bar',
+//     userId: 1,
+//   },
+//   headers: {
+//     'Content-type': 'application/json; charset=UTF-8',
+//   },
+// })
+// .then(res => console.log(res.data))
+
+
+
 
 
 

@@ -1451,7 +1451,6 @@ promiseFetch("https://samuray.com/users").then((data) => {
 //   yield salary + (salary / 100) * 30;
 //   console.log("before 5 yield");
 //   return salary + (salary / 100) * 35;
-//   // return
 // }
 
 // const generator = gerateSalaryWithBonus(1000);
