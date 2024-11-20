@@ -864,7 +864,48 @@ asyncFetch(); */
 
 
 
+//// promise
 
+
+/* const promise = new Promise((res, rej) => {
+  setTimeout(() => res('Hello'), 1000)
+})
+
+console.log('promise', promise); */
+
+
+//// REST OPERATOR
+// const employee = {
+//   id: 1,
+//   name: 'John',
+//   salary: 5000
+// }
+
+// const {salary, ...newEmployee} = employee
+// console.log(employee);
+// console.log(newEmployee);
+
+
+// const createProduct = ({name, price, categoryId, brandId}) => {
+//   const newName = name + ' Burger'
+//   const newPrice = price + 200
+//   const newCatId = categoryId + 1
+//   const newBrandId = brandId + 1
+
+//   return {
+//     name: newName,
+//     price: newPrice,
+//     categoryId: newCatId,
+//     brandId: newBrandId,
+//   }
+// }
+
+// console.log(createProduct({
+//   name: 'Ben',
+//   price: 100,
+//   categoryId: 1,
+//   brandId: 1,
+// }));
 
 
 
