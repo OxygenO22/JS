@@ -907,5 +907,61 @@ console.log('promise', promise); */
 //   brandId: 1,
 // }));
 
+// filter
+// const data = [
+//     {
+//         name: 'Mark',
+//         isRegistered: true
+//     }, {
+//         name: 'Mary',
+//         isRegistered: false
+//     }, {
+//         name: 'Mae',
+//         isRegistered: true
+//     }
+//   ]
+
+// const registeredUsers = data.filter(user => user.isRegistered)
+
+// console.log(registeredUsers);
 
 
+
+//reduce
+
+// const strs = ['I', ' ', 'am', ' ', 'Iron', ' ', 'Man']
+
+// const result = strs.reduce((acc, currentStr) => acc + currentStr, '');
+
+// console.log(result);
+
+//arguments to array
+// function one(a, b) {
+//     return Array.prototype.slice.call(arguments)
+// }
+
+
+// console.log(one(1, 2));
+
+
+// const four = (...args) => args
+
+// console.log(four(1, 2));
+
+
+// const promise = new Promise((res, rej) => setTimeout(()=> res, 2000) );
+
+// console.log(promise);
+
+
+///new
+
+function Employee(name, position, yearHired){
+    this.name = name
+    this.position = position
+    this.yearHired = yearHired
+}
+
+const emp = new Employee('Marko Polo', 'Software Development', 2017)
+
+console.log(emp);
