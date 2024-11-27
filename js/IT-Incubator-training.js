@@ -956,12 +956,244 @@ console.log('promise', promise); */
 
 ///new
 
-function Employee(name, position, yearHired){
-    this.name = name
-    this.position = position
-    this.yearHired = yearHired
+// function Employee(name, position, yearHired){
+//     this.name = name
+//     this.position = position
+//     this.yearHired = yearHired
+// }
+
+// const emp = new Employee('Marko Polo', 'Software Development', 2017)
+
+// console.log(emp);
+
+
+/// memoizacion
+
+// const slice = Array.prototype.slice
+// function memoize(fn){
+//     const cache = {}
+//     return (...args) => {
+//         const params = slice.call(args)
+//         console.log(params)
+//         if(cache[params]){
+//             console.log('cached')
+//             return cache[params]
+//         } else{
+//             let result = fn(...args)
+//             cache[params] = result
+//             console.log('not cached')
+//             return result
+//         }
+//     }
+// }
+// const makeFullName = (fName, lName) => `${fName} ${lName}`
+// const reduceAdd = (numbers, startValue = 0) => numbers.reduce((total, cur) => total + cur, startValue)
+
+// const memoizedFullName = memoize(makeFullName)
+// const memoizeReduceAdd = memoize(reduceAdd)
+
+// memoizedFullName('Marko', 'Polo')
+// memoizedFullName('Marko', 'Polo') // не выполнится
+// memoizedFullName('Marko', 'Polo', 'Seb') // не выполнится
+
+// memoizeReduceAdd([1,2,3,4],5)
+// memoizeReduceAdd([1,2,3,4],5) // не выполнится
+
+
+/// in
+// const o = {
+//     'prop': 'bwahahah',
+//     'prop2': 'hweasa'
+// }
+
+// console.log('prop' in o) // true
+// console.log('prop1' in o) // false
+
+// console.log(o.hasOwnProperty('prop2')) // true
+// console.log(o.hasOwnProperty('prop1')) // false
+
+// console.log(o['prop']) // bwahahah
+// console.log(o['prop1']) // undefined
+
+
+// четное число - рекурсия
+
+
+/* function isEven(num){
+  debugger
+    if(num < 0 || num === 1) return false
+    if(num == 0) return true
+    return isEven(num - 2)
 }
 
-const emp = new Employee('Marko Polo', 'Software Development', 2017)
+console.log(isEven(5));
+console.log(isEven(2));
+console.log(isEven(7));
+console.log(isEven(8)); */
 
-console.log(emp);
+
+////// Tasks from interviews
+
+
+//1
+// let str = 'fggdgg'
+// console.log(str[0]);
+
+//2 -  Реализовать методы, которые в процессе выполнения строки (2).plus(3).minus(1) дали бы на выходе 4
+
+//Поскольку, мы работаем с числами, надо расширить прототип Number новыми методами. Число два будет доступно через this в функции plus. Из нее мы возвращаем результат сложения числа, на которое указывает this и числа, переданного в качестве аргумента. Аналогично для minus.
+
+// Number.prototype.plus = function (value) {
+// 	return this + value;
+// }
+
+// Number.prototype.minus = function (value) {
+// 	return this - value;
+// }
+
+// const res = (2).plus(3).minus(1)
+
+// console.log(res);
+
+
+//3. «Почему плохо писать прямо в прототипы базовых типов?»
+
+// Array.prototype.sort = function () {}
+// var t = [2, 1, 22];
+// console.log(t.sort());
+
+// Ожидаемый результат — [1, 2, 22], а вернется undefined.
+// Мы рассчитываем, что стандартные методы сработают согласно документации, но какой-то разработчик можем переопределить метод, и он вернет совершенно неожиданный результат.
+// Именно поэтому библиотека prototype.js уступила jQuery.
+
+
+
+//4. Дана функция, она принимает в качестве аргументов строки '*', '1', 'b', '1c', реализуйте ее так, что бы она вернула строку '1*b*1c'
+
+// const correctOrder = (mult, ...str) =>  str.map((el, i, str) => i !== str.length - 1 ? el + mult : el).join('');
+
+// console.log(correctOrder('*', '1', 'b', '1c'));
+
+//or 
+
+// function getStr() {
+// 	return [].slice.call(arguments, 1).join(arguments[0])
+// }
+
+// console.log(getStr('*', '1', 'b', '1c'));
+
+
+
+//5.  Дано дерево, надо найти сумму всех вершин.
+
+//Рекурсия.
+
+var sum = 0;
+
+function getSum(obj) {
+	sum += obj.valueNode;
+	if (obj.next != null) {
+		for (var i = 0; i < obj.next.length; i++) {
+			getSum(obj.next[i]);
+		}
+	}
+
+	return sum;
+}
+
+var tree1 = {
+				valueNode: 1,
+				next: [
+					{
+						valueNode: 3,
+						next: null
+					},
+					{
+						valueNode: 2,
+						next: null
+					}
+				]
+			} 
+
+var tree = {
+	valueNode: 3,
+	next: [{
+				valueNode: 1,
+				next: null
+			},
+			{
+				valueNode: 3,
+				next: null
+			},
+			{
+				valueNode: 2,
+				next: null
+			},
+			{
+				valueNode: 2,
+				next: [
+					{
+						valueNode: 1,
+						next: null
+					},
+					{
+						valueNode: 5,
+						next: null
+					}
+				]
+			}]
+};
+console.log(getSum(tree1));
+sum = 0;
+console.log(getSum(tree));
+
+//Очередь.
+
+function getSum(obj) {
+	var arr = [obj],
+		sum = 0,
+		current;
+
+	while(arr.length > 0) {
+		current = arr.shift();
+		sum += current.valueNode;
+
+		if (current.next != null) {
+			for (var i = 0; i < current.next.length; i++) {
+				arr.push(current.next[i]);
+			}
+		}
+	}
+
+	return sum;
+}
+
+var tree = {
+	valueNode: 3,
+	next: [{
+				valueNode: 1,
+				next: null
+			},
+			{
+				valueNode: 3,
+				next: null
+			},
+			{
+				valueNode: 2,
+				next: null
+			},
+			{
+				valueNode: 2,
+				next: [
+					{
+						valueNode: 1,
+						next: null
+					},
+					{
+						valueNode: 5,
+						next: null
+					}
+				]
+			}]
+};
+getSum(tree)
