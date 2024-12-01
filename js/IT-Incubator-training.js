@@ -1019,17 +1019,17 @@ console.log('promise', promise); */
 // четное число - рекурсия
 
 
-/* function isEven(num){
-  debugger
-    if(num < 0 || num === 1) return false
-    if(num == 0) return true
-    return isEven(num - 2)
-}
+// function isEven(num){
+//   debugger
+//     if(num < 0 || num === 1) return false
+//     if(num == 0) return true
+//     return isEven(num - 2)
+// }
 
-console.log(isEven(5));
-console.log(isEven(2));
-console.log(isEven(7));
-console.log(isEven(8)); */
+// console.log(isEven(5));
+// console.log(isEven(2));
+// console.log(isEven(7));
+// console.log(isEven(8));
 
 
 ////// Tasks from interviews
@@ -1088,112 +1088,146 @@ console.log(isEven(8)); */
 
 //Рекурсия.
 
-var sum = 0;
+// var sum = 0;
 
-function getSum(obj) {
-	sum += obj.valueNode;
-	if (obj.next != null) {
-		for (var i = 0; i < obj.next.length; i++) {
-			getSum(obj.next[i]);
-		}
-	}
+// function getSum(obj) {
+// 	sum += obj.valueNode;
+// 	if (obj.next != null) {
+// 		for (var i = 0; i < obj.next.length; i++) {
+// 			getSum(obj.next[i]);
+// 		}
+// 	}
 
-	return sum;
-}
+// 	return sum;
+// }
 
-var tree1 = {
-				valueNode: 1,
-				next: [
-					{
-						valueNode: 3,
-						next: null
-					},
-					{
-						valueNode: 2,
-						next: null
-					}
-				]
-			} 
+// var tree1 = {
+// 				valueNode: 1,
+// 				next: [
+// 					{
+// 						valueNode: 3,
+// 						next: null
+// 					},
+// 					{
+// 						valueNode: 2,
+// 						next: null
+// 					}
+// 				]
+// 			} 
 
-var tree = {
-	valueNode: 3,
-	next: [{
-				valueNode: 1,
-				next: null
-			},
-			{
-				valueNode: 3,
-				next: null
-			},
-			{
-				valueNode: 2,
-				next: null
-			},
-			{
-				valueNode: 2,
-				next: [
-					{
-						valueNode: 1,
-						next: null
-					},
-					{
-						valueNode: 5,
-						next: null
-					}
-				]
-			}]
-};
-console.log(getSum(tree1));
-sum = 0;
-console.log(getSum(tree));
+// var tree = {
+// 	valueNode: 3,
+// 	next: [{
+// 				valueNode: 1,
+// 				next: null
+// 			},
+// 			{
+// 				valueNode: 3,
+// 				next: null
+// 			},
+// 			{
+// 				valueNode: 2,
+// 				next: null
+// 			},
+// 			{
+// 				valueNode: 2,
+// 				next: [
+// 					{
+// 						valueNode: 1,
+// 						next: null
+// 					},
+// 					{
+// 						valueNode: 5,
+// 						next: null
+// 					}
+// 				]
+// 			}]
+// };
+// console.log(getSum(tree1));
+// sum = 0;
+// console.log(getSum(tree));
 
-//Очередь.
+// //Очередь.
 
-function getSum(obj) {
-	var arr = [obj],
-		sum = 0,
-		current;
+// function getSum(obj) {
+// 	var arr = [obj],
+// 		sum = 0,
+// 		current;
 
-	while(arr.length > 0) {
-		current = arr.shift();
-		sum += current.valueNode;
+// 	while(arr.length > 0) {
+// 		current = arr.shift();
+// 		sum += current.valueNode;
 
-		if (current.next != null) {
-			for (var i = 0; i < current.next.length; i++) {
-				arr.push(current.next[i]);
-			}
-		}
-	}
+// 		if (current.next != null) {
+// 			for (var i = 0; i < current.next.length; i++) {
+// 				arr.push(current.next[i]);
+// 			}
+// 		}
+// 	}
 
-	return sum;
-}
+// 	return sum;
+// }
 
-var tree = {
-	valueNode: 3,
-	next: [{
-				valueNode: 1,
-				next: null
-			},
-			{
-				valueNode: 3,
-				next: null
-			},
-			{
-				valueNode: 2,
-				next: null
-			},
-			{
-				valueNode: 2,
-				next: [
-					{
-						valueNode: 1,
-						next: null
-					},
-					{
-						valueNode: 5,
-						next: null
-					}
-				]
-			}]
-};
-getSum(tree)
+// var tree = {
+// 	valueNode: 3,
+// 	next: [{
+// 				valueNode: 1,
+// 				next: null
+// 			},
+// 			{
+// 				valueNode: 3,
+// 				next: null
+// 			},
+// 			{
+// 				valueNode: 2,
+// 				next: null
+// 			},
+// 			{
+// 				valueNode: 2,
+// 				next: [
+// 					{
+// 						valueNode: 1,
+// 						next: null
+// 					},
+// 					{
+// 						valueNode: 5,
+// 						next: null
+// 					}
+// 				]
+// 			}]
+// };
+// getSum(tree)
+
+
+
+// 12. Есть массив в котором лежат объекты с датами, отсортировать по датам.
+
+/* let arr = [
+  {date: '10.01.2017'}, 
+  {date: '05.11.2016'}, 
+  {date: '05.11.2006'}, 
+  {date: '01.01.1989'}, 
+  {date: '04.15.1989'}, 
+  
+];
+
+console.log(arr.map(el => new Date(el.date)));
+console.log(arr.sort((a, b) => new Date(a.date) - new Date(b.date))); */
+
+
+
+// 13. Есть несколько слов, определить состоят ли они из одних и тех же букв('кот', 'ток', 'окт')
+
+// const arr = ['кот', 'мок', 'ток', 'ьфкев', 'крпо', 'окт', 'тор']
+
+// const isTheSameItem = (arr) => {
+//   const sortedArr = arr.map(word => word.split('').sort().join('')).sort()
+//   for (let i = 0; i < sortedArr.length - 1; i++) {
+//     console.log(`${i} - ${sortedArr[i]} and ${sortedArr[i + 1]}: `, sortedArr[i] === sortedArr[i + 1]);
+//   }
+//   console.log(sortedArr);
+// }
+// isTheSameItem(arr);
+
+
+
