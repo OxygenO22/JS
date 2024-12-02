@@ -1231,3 +1231,20 @@ console.log(arr.sort((a, b) => new Date(a.date) - new Date(b.date))); */
 
 
 
+function test() {
+	return new Promise(function (resolve) {
+		setTimeout (function () {
+			resolve(1);
+		})
+	})
+}
+
+async function test1() {
+	var res = await test();
+	console.log(res + 1);
+}
+
+test1();
+test1();
+
+console.log(eval([4, 2, 3, 7].join('+')));
