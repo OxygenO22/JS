@@ -47,26 +47,26 @@ console.log(cursive_letter(str)) */
 /* 5. Первая буква каждого слова заглавная
 Напишите функцию capitalize(str), которая возвращает строку, в которой каждое слово начинается с заглавной буквы. */
 
-/* let str = "каждый охотник желает знать";
+// let str = "каждый охотник желает знать";
 
-let capitalize = (str) => {
-   //let arr = str.split(' ');
-   //let arrs;
-   //let newArr = [];
-   //for (items of arr) {
-   //arrs = items.charAt(0).toUpperCase() + items.slice(1);
-   //arrs = items[0].toUpperCase() + items.slice(1);
-   //newArr.push(arrs);
-   //}
-   //return newArr.join(' ');
-   //or
-   let result = str.split(' ').map(items => items.at(0).toUpperCase() + items.slice(1));
-   return result.join(' ');
+// let capitalize = (str) => {
+//    //let arr = str.split(' ');
+//    //let arrs;
+//    //let newArr = [];
+//    //for (items of arr) {
+//    //arrs = items.charAt(0).toUpperCase() + items.slice(1);
+//    //arrs = items[0].toUpperCase() + items.slice(1);
+//    //newArr.push(arrs);
+//    //}
+//    //return newArr.join(' ');
+//    //or
+//    let result = str.split(' ').map(items => items.at(0).toUpperCase() + items.slice(1)).join(' ');
+//    return result;
    
-}
+// }
 
-document.writeln(capitalize(str)); // "Каждый Охотник Желает Знать"
-console.log(capitalize(str)) */
+// document.writeln(capitalize(str)); // "Каждый Охотник Желает Знать"
+// console.log(capitalize(str))
 
 //
 /* 6. Смена регистра символов строки
@@ -116,33 +116,37 @@ document.writeln(change_register(str)); // "кАжДыЙ оХоТнИк ЖеЛа
 /* 7. Удалить все не буквенно-цифровые символы
 Напишите функцию remove_char(str), которая возвращает строку, очищенную от всех не буквенно-цифровых символов.
  */
-/* var str = "every., -/ hunter #! wishes ;: {} to $ % ^ & * know ;:{}how it#!work";
+// var str = "every., -/ hunter #! wishes ;: {} to $ % ^ & * know ;:{}how it#!work";
 
-function remove_char(str) {
+// function remove_char(str) {
 
-   let arr = str.split('');
-   let sortItemArr = [];
-   let finArr = [];
+//    let arr = str.split('');
+//    let sortItemArr = [];
+//    let finArr = [];
 
-   for (item of arr) {
-      if (item.codePointAt() >= 65 && item.codePointAt() <= 90 || item.codePointAt() >= 97 && item.codePointAt() <= 122 || item.codePointAt() >= 48 && item.codePointAt() <= 57 || item.codePointAt() == 32) {
-         sortItemArr.push(item);
-      } else {
-         sortItemArr.push(' ');
-      }
-   }
-   let str2 = sortItemArr.join('');
-   let arr2 = str2.split(' ');
-   for (sortItem of arr2) {
-      if (sortItem.codePointAt() >= 65 && sortItem.codePointAt() <= 90 || sortItem.codePointAt() >= 97 && sortItem.codePointAt() <= 122 || sortItem.codePointAt() >= 48 && sortItem.codePointAt() <= 57) {
-         finArr.push(sortItem);
-      }
-   }
-   return finArr.join(' ');
-};
+   
 
-document.writeln(remove_char(str)); // "every hunter wishes to know"
-console.log(remove_char(str)); // "every hunter wishes to know" */
+//    for (item of arr) {
+//       if (item.codePointAt() >= 65 && item.codePointAt() <= 90 || item.codePointAt() >= 97 && item.codePointAt() <= 122 || item.codePointAt() >= 48 && item.codePointAt() <= 57 || item.codePointAt() == 32) {
+//          sortItemArr.push(item);
+//       } else {
+//          sortItemArr.push(' ');
+//       }
+//    }
+//    let str2 = sortItemArr.join('');
+//    let arr2 = str2.split(' ');
+//    for (sortItem of arr2) {
+//       if (sortItem.codePointAt() >= 65 && sortItem.codePointAt() <= 90 || sortItem.codePointAt() >= 97 && sortItem.codePointAt() <= 122 || sortItem.codePointAt() >= 48 && sortItem.codePointAt() <= 57) {
+//          finArr.push(sortItem);
+//       }
+//    }
+
+   
+//    return finArr.join(' ');
+// };
+
+// document.writeln(remove_char(str)); // "every hunter wishes to know"
+// console.log(remove_char(str)); // "every hunter wishes to know"
 
 //
 /* 8. Нулевое заполнение строки
@@ -303,7 +307,7 @@ document.writeln(getSubstr(str, 'Н', 'before')); // Астрономия — */
 //document.writeln(insert('Казнить нельзя', 'Помиловать ', 1)); // Казнить Помиловать нельзя
 
 //
-//----------------------------------- polindrom
+//----------------------------------- polindrom/палиндром
 /* //function polindrom(str) {
 //   return (str.split("").join("") === str.split("").reverse().join("")) ? "Polindrom" : "This is not polindrom";
 //}

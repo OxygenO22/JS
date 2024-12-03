@@ -1231,20 +1231,87 @@ console.log(arr.sort((a, b) => new Date(a.date) - new Date(b.date))); */
 
 
 
-function test() {
-	return new Promise(function (resolve) {
-		setTimeout (function () {
-			resolve(1);
-		})
-	})
+// function test() {
+// 	return new Promise(function (resolve) {
+// 		setTimeout (function () {
+// 			resolve(1);
+// 		})
+// 	})
+// }
+
+// async function test1() {
+// 	var res = await test();
+// 	console.log(res + 1);
+// }
+
+// test1();
+// test1();
+
+
+
+// Сумма массива
+//console.log(eval([4, 2, 3, 7].join('+')));
+//console.log([4, 2, 3, 7].reduce((a, c) => a + c, 0));
+
+
+// Функция - конструктор
+// function Book(name, author) {
+//     this.name = name;
+//     this.author = author;
+//     return this;
+// }
+
+// function Foo(Cclass, name, author) {
+//     return Cclass.call({}, name, author);
+// }
+
+// var book = Foo(Book, 'js', 'petr');
+
+// console.log(book.name);
+
+
+
+// Палиндром
+
+// const isPalindrom = (word) => {
+//   const transformedWord =  word.toLowerCase().replace(/ /g, '');
+//   return transformedWord === transformedWord.split('').reverse().join('');
+// }
+
+// console.log(isPalindrom('Заказ'));
+// console.log(isPalindrom('Роза'));
+// console.log(isPalindrom('Тут как тут'));
+// console.log(isPalindrom('А лес у села'));
+
+
+//Каррирование
+
+//f(2, 3) -> 5, при вызове f(2)(3), тоже вернет 5
+
+function a(a, b) {
+ 	if (b !== undefined) {
+ 		return a + b;
+ 	} else {
+ 	return function (b) {
+ 		return a + b;
+ 		}
+ 	}
+ }
+ console.log(a(2)(3));
+
+
+//f(1)(2)(3)() -> 6, f(0)(3)(1)(5)() -> 8
+function f(arg) {
+	var value = arg;
+
+	return function (arg) {
+		if (arg !== undefined) {
+			return f(value + arg);
+		} else {
+		return value;
+		}
+	}
 }
 
-async function test1() {
-	var res = await test();
-	console.log(res + 1);
-}
+console.log(f(1)(2)());
 
-test1();
-test1();
-
-console.log(eval([4, 2, 3, 7].join('+')));

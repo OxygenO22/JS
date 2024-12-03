@@ -75,34 +75,37 @@ document.writeln(changeRegister(str)); // [кАжДыЙ оХоТнИк] */
 /* 5. Удалить повторяющиеся элементы массива
 Напишите функцию removeDuplicates(arr), которая возвращает массив, в котором удалены повторяющиеся элементы из массива arr (игнорируйте чувствительность к регистру). */
 
-/* var arr = ["php", "php", "php", "css", "css", "script", "script", "html", "html", "java", "ph"];
-function removeDuplicates(arr) {
-   //var obj = {};
-   //for (var i = 0; i < arr.length; i++) {
-   //   obj[arr[i]] = 1;
-   //}
-   //return Object.keys(obj); 
-   //or
-   let newArr = [];
-   let finalArr = [];
-   for (let i = 0; i < arr.length; i++) {
-      if (arr[i] === arr[i + 1]) {
-         newArr.push("-");
-      } else {
-         newArr.push(arr[i]);
-      }
-   }
+// var arr = ["php", "php", "php", "css", "css", "script", "script", "html", "html", "java", "ph"];
+// function removeDuplicates(arr) {
+//    //var obj = {};
+//    //for (var i = 0; i < arr.length; i++) {
+//    //   obj[arr[i]] = 1;
+//    //}
+//    //return Object.keys(obj); 
+//    //or
+//    let newArr = [];
+//    let finalArr = [];
+//    for (let i = 0; i < arr.length; i++) {
+//       if (arr[i] === arr[i + 1]) {
+//          newArr.push("-");
+//       } else {
+//          newArr.push(arr[i]);
+//       }
+//    }
 
-   for (let item of newArr) {
-      if (item != "-") {
-         finalArr.push(item);
-      }
-   }
+//    for (let item of newArr) {
+//       if (item != "-") {
+//          finalArr.push(item);
+//       }
+//    }
 
-   console.log(finalArr);
-}
-result = removeDuplicates(arr);
-document.writeln(result);       // [php,css,script,html,java,ph] */
+//    console.log(finalArr);
+// }
+// result = removeDuplicates(arr);
+// //or
+// console.log([...new Set(arr)]); // !!!!!!!!!!!!!
+
+// document.writeln(result);       // [php,css,script,html,java,ph]
 
 //
 /* 6. Найдите високосные годы
