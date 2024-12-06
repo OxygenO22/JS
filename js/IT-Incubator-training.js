@@ -1288,30 +1288,203 @@ console.log(arr.sort((a, b) => new Date(a.date) - new Date(b.date))); */
 
 //f(2, 3) -> 5, при вызове f(2)(3), тоже вернет 5
 
-function a(a, b) {
- 	if (b !== undefined) {
- 		return a + b;
- 	} else {
- 	return function (b) {
- 		return a + b;
- 		}
- 	}
- }
- console.log(a(2)(3));
+// function a(a, b) {
+//  	if (b !== undefined) {
+//  		return a + b;
+//  	} else {
+//  	return function (b) {
+//  		return a + b;
+//  		}
+//  	}
+//  }
+//  console.log(a(2)(3));
 
 
-//f(1)(2)(3)() -> 6, f(0)(3)(1)(5)() -> 8
-function f(arg) {
-	var value = arg;
+// //f(1)(2)(3)() -> 6, f(0)(3)(1)(5)() -> 8
+// function f(arg) {
+// 	var value = arg;
 
-	return function (arg) {
-		if (arg !== undefined) {
-			return f(value + arg);
-		} else {
-		return value;
-		}
-	}
-}
+// 	return function (arg) {
+// 		if (arg !== undefined) {
+// 			return f(value + arg);
+// 		} else {
+// 		return value;
+// 		}
+// 	}
+// }
 
-console.log(f(1)(2)());
+// console.log(f(1)(2)());
 
+
+
+
+// 34. Еще интересный пример. Реализовать методы seven, plus, one, five, minus, two. seven(plus(one())) -> 8. five(minus(two())) -> 3
+
+// function one(arg) {
+// 	return 1 + (arg || 0);
+// }
+
+// function two(arg) {
+// 	return 2 + (arg || 0);
+// }
+
+// function five(arg) {
+// 	return 5 + (arg || 0);
+// }
+
+// function seven(arg) {
+// 	return 7 + (arg || 0);
+// }
+
+// function plus(arg) {
+// 	return arg;
+// }
+
+// function minus(arg) {
+// 	return -arg;
+// }
+
+// console.log(seven(plus(one())));
+
+
+
+
+//35. Сортировка пузырьком.
+
+// let m = [1, 7, 5, 13, 8],
+//       count = m.length - 1,
+//       max;
+// for (let i = 0; i < count; i++) {
+//     for (let j = 0; j < count - i; j++) {
+//         if (m[j] > m[j + 1]) {
+//             max = m[j];
+//             m[j] = m[j + 1];
+//             m[j + 1] = max;
+//         }
+//     }
+// }
+
+// console.log(m);
+
+
+
+//38. Есть строка, состоящая из разных скобок, проверить закрыты ли все.  Пример строки: "())({}}{()][]["
+
+// function validBraces(str) {
+
+// 	var arrOpenSymbols = [],
+// 		result = false,
+// 		countOpenSymbols;
+// 	if (str.length > 0) {
+// 		for (var i = 0; i < str.length; i++) {
+// 			if (str[i] === '{' || str[i] === '[' || str[i] === '(') {
+// 				arrOpenSymbols.push(str[i]);
+// 			} else {
+// 				countOpenSymbols = arrOpenSymbols.length;
+// 				if ((str[i] === '}' && arrOpenSymbols[(countOpenSymbols-1)] === '{') ||
+// 					(str[i] === ']' && arrOpenSymbols[(countOpenSymbols-1)] === '[') ||
+// 					(str[i] === ')' && arrOpenSymbols[(countOpenSymbols-1)] === '(')
+// 					) {
+// 						arrOpenSymbols.pop();
+// 				}
+// 			}
+// 		}
+
+// 		if (arrOpenSymbols.length === 0) {
+// 			result = true;
+// 		} else {
+// 			result = false;
+// 		}
+// 	}
+// 	return result;
+// }
+// console.log('');
+// console.log(validBraces('()'));
+// console.log(validBraces('[)'));
+// console.log(validBraces('{}[]()'));
+// console.log(validBraces('([{}])'));
+// console.log(validBraces('())({}}{()][]['));
+
+
+
+///40. Напишите код, который сделает из массива объект
+// на входе массив
+/* var arr = [
+ {name: 'width', value: 10}, 
+ {name: 'height', value: 20}
+] */
+
+// // на выходе объект
+// {width: 10, height: 20}
+
+
+// const arr = [
+//  {name: 'width', value: 10}, 
+//  {name: 'height', value: 20}
+// ]
+
+// const result = arr.reduce((acc, {name, value}) => ({...acc, [name]: value}), {})
+
+// console.log(result);
+
+
+
+//41. Что выведется в результате?
+
+// let i = 10;
+// const array = [];
+
+// while (i--) {
+//     (function (i) {
+//         i = i;
+//         array.push(function() {
+//             return i + i;
+//         });
+//     })(i);
+// }    
+
+// console.log([
+//     array[0](),
+//     array[1](),
+// ])
+
+
+//42. Есть функция и объект. Напишите все известные вам способы, чтобы вывести в консоли значение x из объекта используя функцию
+
+// function f() { console.log(this.x); }
+// var obj = {x: 'bar'};
+
+// f.call(obj)
+// f.apply(obj)
+
+// obj.funk = function f() { console.log(this.x); }
+// obj.funk();
+
+// const fooB = f.bind(obj);
+// fooB();
+
+
+//45. Что вернёт этот код — typeof (function(){})()
+
+//console.log(typeof (function(){})());
+
+
+//47. Почему 0.1 + 0.2 даст 0.30000000000000004
+
+// let a = 0.1 + 0.2
+// console.log(a);
+
+//48. Напиши функцию, которая принимает массив чисел и возвращает массив, в котором все элементы уникальны
+
+// const array = [1, 1, 2, 2, 4, 2, 3, 7, 3]
+
+// const unique = (arr) => [... new Set(arr)]
+
+// console.log(unique(array));
+
+
+//49. убрать вложенность
+
+// const flat = (arr) => arr.flat(Infinity)
+
+// console.log(flat([1, [2, [3, [4,5]]]]));// => [1, 2, 3, 4, 5]
