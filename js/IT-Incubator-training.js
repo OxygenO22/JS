@@ -1483,8 +1483,129 @@ console.log(arr.sort((a, b) => new Date(a.date) - new Date(b.date))); */
 // console.log(unique(array));
 
 
-//49. убрать вложенность
+//49. убрать вложенность массива
 
 // const flat = (arr) => arr.flat(Infinity)
 
 // console.log(flat([1, [2, [3, [4,5]]]]));// => [1, 2, 3, 4, 5]
+
+
+
+//50. Написать функцию, принимающую аргументом массив чисел и возвращающую новый массив, состоящий из удвоенных значений первого.
+
+//Например: f([1, 2, null, 7, 8, null, 3]); // => [2, 4, 14, 16, 6]
+
+// const doubleArr = (arr) => arr.filter(num => typeof num === 'number').map(num => num * 2)
+
+// console.log(doubleArr([1, 2, null, 7, 8, null, 3]));
+
+
+
+//51. Необходимо написать функцию, возвращающую значения всех вершин дерева:
+
+// const tree = {
+// 	value: 1,
+// 	children: [
+// 		{
+// 			value: 2,
+// 			children: [
+// 				{ value: 4 },
+// 				{ value: 5 },
+// 			]
+// 		},
+// 		{
+// 			value: 3,
+// 			children: [
+// 				{ value: 6 },
+// 				{ value: 7 },
+// 			]
+// 		}
+// 	]
+// };
+
+
+// //Через рекурсию:
+
+// const getTreeValuesRecursia = (tree) => {
+// 	let values = [ tree.value ];
+
+// 	if (Array.isArray(tree.children)) {
+// 		tree.children.map(item => values = values.concat(getTreeValuesRecursia(item)));
+// 	}
+
+// 	return values;
+// }
+
+// console.log(getTreeValuesRecursia(tree));
+
+
+// //Сумма вершин дерева
+// function getTreeSum(node) {
+// 	let sum = node.value;
+
+// 	if (Array.isArray(node.children)) {
+// 		node.children.map(item => sum += getTreeSum(item));
+// 	}
+
+// 	return sum;
+// }
+
+// console.log(getTreeSum(tree));
+
+// //Через цикл:
+
+// const getTreeValuesCicle = (tree) => {
+// 	const tmpTree = [tree];
+// 	const res = [];
+// 	let current;
+
+// 	while (tmpTree.length > 0) {
+// 		current = tmpTree.shift();
+// 		res.push(current.value);
+
+// 		if (current.children) {
+// 			current.children.forEach(item => tmpTree.push(item));
+// 		}
+// 	}
+
+// 	return res
+// }
+
+// console.log(getTreeValuesCicle(tree));
+
+
+
+
+//53. Сортировка нечётных.
+
+// Необходимо написать функцию, принимающую в аргументах массив и возвращающую новый массив, в котором отсортированы все нечетные числа по возрастанию, в то время как чётные остаются на своих местах.
+
+// Например:
+
+// oddSort([7, 3, 4, 9, 5, 2, 17]); // => [3, 5, 4, 7, 9, 2, 17]
+
+
+function oddSort(arr) {
+	arr.forEach((item, index) => {
+    debugger
+		if (item % 2 === 1) {
+			let sortNumber = item;
+
+			for (let i = 0; i < index; i++) {
+				if (arr[i] % 2 === 1) {
+					if (arr[i] > sortNumber) {
+						const tmp = sortNumber;
+
+						sortNumber = arr[i];
+						arr[i] = tmp;
+					}
+				}
+			}
+			arr[index] = sortNumber;
+		}
+	});
+
+	return arr;
+}
+
+console.log(oddSort([7, 3, 4, 9, 5, 2, 17]));
