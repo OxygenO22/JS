@@ -278,11 +278,13 @@ console.log(mergeArrays(['apple', 'banana'], ['orange', 'kiwi']));  */
 //// 7
 
 
-/* const flattenArray = (arr) => arr.flat(Infinity);
+// const flattenArray = (arr) => arr.flat(Infinity);
+// console.log(flattenArray([1, [2, 3], [[4], [5, 6]]])); 
+// console.log(flattenArray([1, [2, [3, [4, [5]]]]])); 
 
-console.log(flattenArray([1, [2, 3], [[4], [5, 6]]])); 
-console.log(flattenArray([1, [2, [3, [4, [5]]]]]));  */
-
+// const flat = (arr) => arr.join().split(',').map(el => +el)
+// console.log(flat([1, [2, 3], [[4], [5, 6]]])); 
+// console.log(flat([1, [2, [3, [4, [5]]]]])); 
 
 //// 8
 
@@ -1495,9 +1497,9 @@ console.log(arr.sort((a, b) => new Date(a.date) - new Date(b.date))); */
 
 //Например: f([1, 2, null, 7, 8, null, 3]); // => [2, 4, 14, 16, 6]
 
-// const doubleArr = (arr) => arr.filter(num => typeof num === 'number').map(num => num * 2)
+/* const doubleArr = (arr) => arr.filter(num => typeof num === 'number').map(num => num * 2)
 
-// console.log(doubleArr([1, 2, null, 7, 8, null, 3]));
+console.log(doubleArr([1, 2, null, 7, 8, null, 3])); */
 
 
 
@@ -1585,27 +1587,27 @@ console.log(arr.sort((a, b) => new Date(a.date) - new Date(b.date))); */
 // oddSort([7, 3, 4, 9, 5, 2, 17]); // => [3, 5, 4, 7, 9, 2, 17]
 
 
-function oddSort(arr) {
-	arr.forEach((item, index) => {
-    debugger
-		if (item % 2 === 1) {
-			let sortNumber = item;
+// function oddSort(arr) {
+// 	arr.forEach((item, index) => {
+//     debugger
+// 		if (item % 2 === 1) {
+// 			let sortNumber = item;
 
-			for (let i = 0; i < index; i++) {
-				if (arr[i] % 2 === 1) {
-					if (arr[i] > sortNumber) {
-						const tmp = sortNumber;
+// 			for (let i = 0; i < index; i++) {
+// 				if (arr[i] % 2 === 1) {
+// 					if (arr[i] > sortNumber) {
+// 						const tmp = sortNumber;
 
-						sortNumber = arr[i];
-						arr[i] = tmp;
-					}
-				}
-			}
-			arr[index] = sortNumber;
-		}
-	});
+// 						sortNumber = arr[i];
+// 						arr[i] = tmp;
+// 					}
+// 				}
+// 			}
+// 			arr[index] = sortNumber;
+// 		}
+// 	});
 
-	return arr;
-}
+// 	return arr;
+// }
 
-console.log(oddSort([7, 3, 4, 9, 5, 2, 17]));
+// console.log(oddSort([7, 3, 4, 9, 5, 2, 17]));
