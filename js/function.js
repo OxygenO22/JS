@@ -193,3 +193,26 @@ console.log(e, f);
 
 let { j, h, ...ost } = { g: 1, h: 2, j: 3, k: 4, l: 5 };
 console.log(j, h, ost); */
+
+
+
+/// Написать ф-ю, которая вернет конкотинированную строку из values, расположенном в обратном порядке
+// результат собирается из непросроченных записей и в порядке возрастания order
+// результат не содержит одинаковых символов
+
+const input = [
+   {value: 'abcd', order: 4, expired: false},
+   {value: 'qwer', order: 2, expired: true},
+   {value: 'xyz1', order: 1, expired: false},
+   {value: 'abx2', order: 3, expired: false},
+]
+
+const findResStrWithRevercedVal = (input) => {
+   const expiredItems = input.filter(item => !item.expired);
+   const sortedItems = expiredItems.sort((a, b) => a.order - b.order);
+   const reversedItems = sortedItems.map(i =>  i.value.split('').reverse().join('')).join('');
+   console.log(reversedItems);
+   return [... new Set(reversedItems)].join('');
+}
+
+console.log(findResStrWithRevercedVal(input)); // 'xwreba'
