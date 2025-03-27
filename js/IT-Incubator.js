@@ -1470,6 +1470,21 @@ promiseFetch("https://samuray.com/users").then((data) => {
 // console.log(generator.next());
 // console.log(generator.next());
 
+
+// function* genFoo() {
+//   yield 1;
+//   yield 2;
+//   return 3;
+// }
+
+// const fooGenerator = genFoo();
+
+// console.log(fooGenerator.next()); // { value: 1, done: false }
+
+// console.log(fooGenerator.next()); // { value: 2, done: false }
+
+// console.log(fooGenerator.next()); // { value: 3, done: true }
+
 // --------------------------------------
 
 // Определите функцию с именем asyncAlt, которая принимает функцию генератора

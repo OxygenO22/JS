@@ -1,5 +1,16 @@
 ///////////////  FUNCTION //////////////
 
+// Замыкание!!!!!!!!!!!!!!!!!!!!!!!!!
+// function outer() {
+//    let count = 0;
+//    return () => count++;
+// }
+
+// const myFunc = outer();
+// console.log(myFunc());
+// console.log(myFunc());
+// console.log(myFunc());
+
 //
 /* 1. Переверните число задом наперед
 Напишите функцию JavaScript, которая переворачивает число. */
