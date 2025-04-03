@@ -77,7 +77,7 @@ console.log( fib(77) ); // 5527939700884757 */
 //////// //////////////////////////////////////////// JS Native
 
 
-///////////////////////////////////////////////////// Sprint 1 Lesson 1
+///////////////////////////////////////////////////// Sprint 1 Lesson 1 Objects
 
  /* const users1 = {
  // #890--99876
@@ -118,40 +118,58 @@ isStudent: true,
 
 ///
 
-/* const superUser = {
-  id: 10,
-    name: 'Clementina DuBuque',
-    username: 'Moriah.Stanton',
-    email: 'Rey.Padberg@karina.biz',
-      address: {
-        street: 'Kattie Turnpike',
-        suite: 'Suite 198',
-        city: 'Lebsackbury',
-        zipcode: '31428-2261',
-      geo: {
-        lat: '-38.2386',
-        lng: '57.2232',
-      },
-    },
-    phone: '024-648-3804',
-    website: 'ambrose.net',
-    company: {
-      name: 'Hoeger LLC',
-      catchPhrase: 'Centralized empowering task-force',
-      bs: 'target end-to-end models',
-  },
-};
+//  const superUser = {
+//   id: 10,
+//   name: 'Clementina DuBuque',
+//   username: 'Moriah.Stanton',
+//   email: 'Rey.Padberg@karina.biz',
+//     address: {
+//       street: 'Kattie Turnpike',
+//       suite: 'Suite 198',
+//       city: 'Lebsackbury',
+//       zipcode: '31428-2261',
+//     geo: {
+//       lat: '-38.2386',
+//       lng: '57.2232',
+//     },
+//   },
+//   phone: '024-648-3804',
+//   website: 'ambrose.net',
+//   company: {
+//     name: 'Hoeger LLC',
+//     catchPhrase: 'Centralized empowering task-force',
+//     bs: 'target end-to-end models',
+//   },
+// };
 
 
-const superUser2 =  structuredClone(superUser);
+// const superUser2 =  structuredClone(superUser);
 
-superUser2.address.city = 'Minsk' 
+// const superUser3 = {...superUser}
 
-console.log('superUser :', superUser)
-console.log('superUser2 :', superUser2) */
+// superUser2.address.city = 'Minsk' 
+// superUser3.address.city = 'Moscow' 
+
+// console.log('superUser :', superUser)
+// console.log('superUser2 :', superUser2) 
+// console.log(superUser === superUser2);
+// console.log(superUser === superUser3);
+
+
 
 
 /// деструктуризация
+
+// const calcValues = (a, b) => {
+//   return [a + b, a - b, a * b, a / b]
+// }
+// console.log(calcValues(5, 3));
+// const [sum, sub, ...others] = calcValues(5, 3)
+// console.log(sum, others);
+
+
+
+
 /* const employee = {
   firstName: 'Ivan',
   lastName: 'Ivanov',
@@ -224,7 +242,7 @@ const Hello = ([first, ...rest]) => {
 Hello(arr) */
 
 
-///////////////////////////////////////////////////// Sprint 1 Lesson 2
+///////////////////////////////////////////////////// Sprint 1 Lesson 2 Array's methods
 
 // push, pop, shift, unshift
 
@@ -416,47 +434,48 @@ console.log(numbers.sort((a, b) => a - b)) */
 
 //3
 
-/* const users = [
-{
-id: 1,
-name: 'Bob',
-isStudent: true,
-},
-{
-id: 2,
-name: 'Alex',
-isStudent: true,
-},
-{
-id: 3,
-name: 'alex',
-isStudent: true,
-},
-];
+// const users = [
+// {
+// id: 1,
+// name: 'Bob',
+// isStudent: true,
+// },
+// {
+// id: 2,
+// name: 'Alex',
+// isStudent: true,
+// },
+// {
+// id: 3,
+// name: 'alex',
+// isStudent: true,
+// },
+// ];
 
-console.log(users.sort((a, b) => a.name.localeCompare(b.name))) */
+// console.log(users.sort((a, b) => a.name.localeCompare(b.name)))
 
 // toSorted() - работает как sort, но не мутирует!!!!! 
 
-/* const users = [
-{
-id: 1,
-name: 'Bob',
-isStudent: true,
-},
-{
-id: 2,
-name: 'Alex',
-isStudent: true,
-},
-{
-id: 3,
-name: 'alex',
-isStudent: true,
-},
-];
+// const users = [
+// {
+// id: 1,
+// name: 'Bob',
+// isStudent: true,
+// },
+// {
+// id: 2,
+// name: 'Alex',
+// isStudent: true,
+// },
+// {
+// id: 3,
+// name: 'alex',
+// isStudent: true,
+// },
+// ];
 
-console.log(users.toSorted((a, b) => a.name.localeCompare(b.name))) */
+// console.log('users: ', users)
+// console.log('toSorted: ', users.toSorted((a, b) => a.name.localeCompare(b.name)))
 
 
 
@@ -595,14 +614,14 @@ console.log('res: ', res) */
 // 2
 
 
-/* const fruits = [
-{ name: 'apple', quantity: 2 },
-{ name: 'banana', quantity: 3 },
-{ name: 'orange', quantity: 1 },
-];
+// const fruits = [
+// { name: 'apple', quantity: 2 },
+// { name: 'banana', quantity: 3 },
+// { name: 'orange', quantity: 1 },
+// ];
 
-const totalQuantyty = fruits.reduce((prev, fruit) => prev + fruit.quantity , 0);
-console.log('totalQuantyty: ', totalQuantyty) */
+// const totalQuantyty = fruits.reduce((prev, fruit) => prev + fruit.quantity , 0);
+// console.log('totalQuantyty: ', totalQuantyty)
 
 
 // 3
@@ -624,81 +643,74 @@ console.log('max: ', max); */
 
 // 4
 
-/* const people = [
-{ name: 'Vika', age: 25, budget: 4500 },
-{ name: 'Nikita', age: 45, budget: 35000 },
-{ name: 'Igor', age: 55, budget: 340 },
-{ name: 'Insaf', age: 65, budget: 50000 },
-{ name: 'Alyona', age: 75, budget: 20 },
-]; // {names: [...], totalAges: ...} 
+// const people = [
+// { name: 'Vika', age: 25, budget: 4500 },
+// { name: 'Nikita', age: 45, budget: 35000 },
+// { name: 'Igor', age: 55, budget: 340 },
+// { name: 'Insaf', age: 65, budget: 50000 },
+// { name: 'Alyona', age: 75, budget: 20 },
+// ]; // {names: [...], totalAges: ...} 
 
- const result = people.reduce((acc, user) => {
-  acc.names.push(user.name);
-  acc.totalAges += user.age;
-  acc.totalBudget += user.budget;
-  return acc;
-}, {names: [], totalAges: 0, totalBudget: 0})
+//  const result = people.reduce((acc, user) => {
+//   acc.names.push(user.name);
+//   acc.totalAges += user.age;
+//   acc.totalBudget += user.budget;
+//   return acc;
+// }, {names: [], totalAges: 0, totalBudget: 0})
 
-console.log('result:', result) */
+// console.log('result:', result)
 
 
 // 5
 
-
-/* const people = [
-{ name: 'Vika', age: 25, budget: 4500 },
-{ name: 'Nikita', age: 45, budget: 35000 },
-{ name: 'Igor', age: 55, budget: 340 },
-{ name: 'Insaf', age: 65, budget: 50000 },
-{ name: 'Alyona', age: 75, budget: 20 },
-]; */
 //1
+// const people = [
+// { name: 'Vika', age: 25, budget: 4500 },
+// { name: 'Nikita', age: 45, budget: 35000 },
+// { name: 'Igor', age: 55, budget: 340 },
+// { name: 'Insaf', age: 65, budget: 50000 },
+// { name: 'Alyona', age: 75, budget: 20 },
+// ];
 
-/* const totalBudget = people.reduce((acc, cur) => acc + cur.budget, 0);
-
-console.log('totalBudget:', totalBudget); */
+// const totalBudget = people.reduce((acc, cur) => acc + cur.budget, 0);
+// console.log('totalBudget:', totalBudget);
 
 //2 {totalBudget: [], names: []}
 
-/* const people1 = [
-{ name: 'Vika', age: 25, budget: 4500 },
-{ name: 'Nikita', age: 45, budget: 35000 },
-{ name: 'Igor', age: 55, budget: 340 },
-{ name: 'Insaf', age: 65, budget: 50000 },
-{ name: 'Alyona', age: 75, budget: 20 },
-];
+// const people1 = [
+// { name: 'Vika', age: 25, budget: 4500 },
+// { name: 'Nikita', age: 45, budget: 35000 },
+// { name: 'Igor', age: 55, budget: 340 },
+// { name: 'Insaf', age: 65, budget: 50000 },
+// { name: 'Alyona', age: 75, budget: 20 },
+// ];
 
-const res = people1.reduce((acc, curr, index) => {
-  acc.names.push(curr.name);
-  let sum = people1.reduce((acc, budg) => acc + budg.budget, 0);
-  people1.length === index + 1 && acc.totalBudget.push(sum)
-  return acc;
-}, { totalBudget: [], names: []})
+// const res = people1.reduce((acc, curr, index) => {
+//   acc.names.push(curr.name);
+//   let sum = people1.reduce((acc, budg) => acc + budg.budget, 0);
+//   people1.length === index + 1 && acc.totalBudget.push(sum)
+//   return acc;
+// }, { totalBudget: [], names: []})
 
-console.log('res:', res); */
+// console.log('res:', res);
 
 
 // 3
 
-/* const words = ['Hello', ' ', 'word', '!']
+// const words = ['Hello', ' ', 'word', '!']
 
-const res = words.reduce((acc, el)=> {
-  return acc + el
-}, '') 
-
-
-console.log(res) */
+// const res = words.reduce((acc, el)=> {
+//   return acc + el
+// }, '') 
+// console.log(res)
 
 
 // 4 minVal
 
-/* const arr = [1, 20, 30, 2]
+// const arr = [1, 20, 30, 2]
 
-const minVal = arr.reduce((acc, el) => {
-  return el < acc ? el : acc
-})
-
-console.log(minVal) */
+// const minVal = arr.reduce((acc, el) =>  acc < el ? acc : el)
+// console.log(minVal)
 
 
 ///////////////////////////////////////////////////// Sprint 1 Lesson 4
@@ -707,18 +719,19 @@ console.log(minVal) */
 //// статическое значение
 
 
-/* let obj = {
-  name: 'Bob', // статическое св-во
-  age: 55, // статическое св-во
-} */
+// let obj = {
+//   name: 'Bob', // статическое св-во
+//   age: 55, // статическое св-во
+// }
 
-/* const createObj = (key, value) => {
-  let newObj = {};
-  newObj[key] = value;
-  return newObj;
-}
+// const createObj = (key, value) => {
+//   let newObj = {};
+//   newObj[key] = value;
+//   return newObj;
+// }
 
-console.log(createObj('car', 'BMW')) */
+// const createObj = (key, value) => {return {[key]: value}}
+// console.log(createObj('car', 'BMW'))
 
 
 //// динамическое значение
@@ -810,17 +823,17 @@ console.log(driverStatuses1); */
 //// 5 Object.keys() - работает без вложенностей, возвр массив ключей
 
 
-/* const drivers = {name: 'Pavel', status: 'busy', country: {id: 1}}
-const result = Object.keys(drivers);
-console.log(result); */
+// const drivers = {name: 'Pavel', status: 'busy', country: {id: 1}}
+// const result = Object.keys(drivers);
+// console.log(result);
 
 
-//// 6 Object.values() - показывает вложенности но не разворачивает их, возвр массив ключей
+//// 6 Object.values() - показывает вложенности но не разворачивает их, возвр массив значений
 
 
-/* const drivers = {name: 'Pavel', status: 'busy', country: {id: 1}}
-const result = Object.values(drivers);
-console.log(result); */
+// const drivers = {name: 'Pavel', status: 'busy', country: {id: 1}}
+// const result = Object.values(drivers);
+// console.log(result);
 
 
 //// 7 Object.entries() - показывает вложенности но не разворачивает их, возвр массив массивов
